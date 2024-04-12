@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<header class="bg-neutral-50 absolute inset-x-0 top-0 z-50 px-10 sm:px-24 py-4 sm:py-6">
+<header class="bg-neutral-100 inset-x-0 top-0 z-50 px-10 sm:px-24 py-4 sm:py-6 border-b border-neutral-900/5">
 
     <?php
     $args = array(
@@ -35,20 +35,20 @@
         <p class="flex flex-1 items-center justify-center font-primary font-medium text-sm sm:text-base text-center text-zinc-900"><?php the_field('conf-info-banner') ?></p>
         <div class="flex flex-0.5 sm:flex-1 items-center justify-end">
             <button id="menuToggleLarge" class="lg:flex hidden justify-center">
-                <div class="space-y-2 cursor-pointer">
+                <div class="space-y-2">
                     <span class="block h-1 w-10 origin-center bg-zinc-900 transition-transform ease-in-out"></span>
                     <span class="block h-1 w-8 origin-center bg-lightgreen transition-transform ease-in-out"></span>
                 </div>
             </button>
             <button id="menuToggleSmall" class="flex lg:hidden justify-center">
-                <div class="space-y-1.5 cursor-pointer">
+                <div class="space-y-1.5">
                     <span class="block h-0.5 w-8 origin-center bg-zinc-900 transition-transform ease-in-out"></span>
                     <span class="block h-0.5 w-6 origin-center bg-lightgreen transition-transform ease-in-out"></span>
                 </div>
             </button>
         </div>
     </nav>
-    <div id="menuOverlay" class="hidden fixed inset-0 bg-zinc-900 bg-opacity-80 z-10 items-center justify-center">
+    <div id="menuOverlay" class="hidden fixed inset-0 bg-zinc-900 bg-opacity-90 z-10 items-center justify-center">
         <div class="flex flex-col space-y-4 font-secondary text-center text-2xl sm:text-3xl text-neutral-50">
             <a href="<?php echo get_home_url(); ?>" class="hover:opacity-100 transition-opacity duration-300">Főoldal</a>
             <a href="<?php echo get_permalink(get_page_by_title('Kötetek')); ?>" class="hover:opacity-100 transition-opacity duration-300">Kötetek</a>
@@ -120,12 +120,12 @@ document.addEventListener("DOMContentLoaded", function () {
     menuLinks.forEach((link) => {
         link.addEventListener("mouseenter", () => {
         menuLinks.forEach(
-            (lnk) => lnk !== link && lnk.classList.add("opacity-50")
+            (lnk) => lnk !== link && lnk.classList.add("opacity-40")
         );
         });
 
         link.addEventListener("mouseleave", () => {
-        menuLinks.forEach((lnk) => lnk.classList.remove("opacity-50"));
+        menuLinks.forEach((lnk) => lnk.classList.remove("opacity-40"));
         });
     });
     });

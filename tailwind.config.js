@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         lightgreen: "#6FAE55",
         darkgreen: "#33673C",
+        tintgreen: "#8CBE77",
       },
       fontFamily: {
         primary: ["itc-avant-garde-gothic-pro", "sans-serif"],
