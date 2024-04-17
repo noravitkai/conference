@@ -9,7 +9,7 @@ Template Name: Home Page
 <main>
 
 <!-- Bento Grid Hero Section -->
-<section class="px-10 sm:px-24 py-4 sm:py-6 bg-neutral-100">
+<section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="relative grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 align-items-stretch">
         <!-- Card 1 -->
         <div class="col-span-1 md:col-span-2 lg:col-span-6 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-xl flex overflow-hidden">
@@ -28,7 +28,7 @@ Template Name: Home Page
                         </svg>
                     </span>
                     <h1 class="pt-3 sm:pt-5 text-2xl sm:text-3xl font-primary text-lightgreen transition-all duration-300 group-hover:text-white"><?php the_field('hero_card_title') ?></h1>
-                    <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 transition-all duration-300 group-hover:text-white"><?php the_field('hero_card_description') ?></p>
+                    <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white"><?php the_field('hero_card_description') ?></p>
                     <a href="#" class="pt-3 sm:pt-5 flex flex-row items-center text-sm sm:text-base font-secondary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">
                         <p class="pr-1"><?php the_field('hero_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -43,14 +43,14 @@ Template Name: Home Page
             <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-lightgreen transition-all duration-300 group-hover:scale-[20]"></span>
             <div class="relative z-5">
                 <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-lightgreen transition-all duration-300 group-hover:bg-tintgreen">
-                    <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11 9H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h6m0-6v6m0-6 5.419-3.87A1 1 0 0 1 18 5.942v12.114a1 1 0 0 1-1.581.814L11 15m7 0a3 3 0 0 0 0-6M6 15h3v5H6v-5Z"/>
+                    <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
                     </svg>
                 </span>
                 <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">
                     <h2><?php the_field('cfp_card_title') ?></h2>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
                     <p><?php the_field('cfp_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
@@ -78,7 +78,7 @@ Template Name: Home Page
                 <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">
                     <h2><?php the_field('programme_card_title') ?></h2>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
                     <p><?php the_field('programme_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
@@ -96,14 +96,14 @@ Template Name: Home Page
             <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-lightgreen transition-all duration-300 group-hover:scale-[20]"></span>
             <div class="relative z-5">
                 <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-lightgreen transition-all duration-300 group-hover:bg-tintgreen">
-                    <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023"/>
+                    <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                     </svg>
                 </span>
                 <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">
                     <h2><?php the_field('volumes_card_title') ?></h2>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
                     <p><?php the_field('volumes_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
@@ -122,6 +122,93 @@ Template Name: Home Page
     </div>
 </section>
 
-</main
+<!-- Mission Section -->
+<section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
+    <div class="mb-10 sm:mb-12 text-center">
+        <h2 class="text-sm sm:text-base font-primary font-medium text-lightgreen uppercase"><?php the_field('mission_section_heading') ?></h2>
+        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('mission_section_subheading') ?></h3>
+    </div>
+
+    <!-- Images -->
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-10 sm:mb-12">
+        <div class="col-span-1">
+            <?php $mission_section_img_1 = get_field('mission_section_img_1'); ?>
+            <?php if ($mission_section_img_1) : ?>
+                <img src="<?php echo esc_url($mission_section_img_1['url']); ?>" alt="<?php echo esc_attr($mission_section_img_1['alt']); ?>" class="rounded-2xl shadow-md w-full h-64 sm:h-80 object-cover">
+            <?php endif; ?>
+        </div>
+        <div class="col-span-1">
+            <?php $mission_section_img_2 = get_field('mission_section_img_2'); ?>
+            <?php if ($mission_section_img_2) : ?>
+                <img src="<?php echo esc_url($mission_section_img_2['url']); ?>" alt="<?php echo esc_attr($mission_section_img_2['alt']); ?>" class="rounded-2xl shadow-md w-full h-64 sm:h-80 object-cover">
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="flex flex-wrap">
+        <div class="w-full border-b md:w-1/2 md:border-r lg:w-1/3 p-3 sm:p-5">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-lightgreen">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                </svg>
+                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('core_value_1_title') ?></h4>
+            </div>
+            <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_1_description') ?></p>
+        </div>
+
+        <div class="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r p-3 sm:p-5">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-lightgreen">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+                </svg>
+                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('core_value_2_title') ?></h4>
+            </div>
+            <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_2_description') ?></p>
+        </div>
+
+        <div class="w-full border-b md:w-1/2 md:border-r lg:w-1/3 lg:border-r-0 p-3 sm:p-5">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-lightgreen">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+                </svg>
+                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('core_value_3_title') ?></h4>
+            </div>
+            <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_3_description') ?></p>
+        </div>
+
+        <div class="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0 p-3 sm:p-5">
+            <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-lightgreen">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                    </svg>
+                    <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('core_value_4_title') ?></h4>
+                </div>
+            <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_4_description') ?></p>
+        </div>
+
+        <div class="w-full border-b md:w-1/2 md:border-r md:border-b-0 lg:w-1/3 lg:border-b-0 p-3 sm:p-5">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-lightgreen">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                </svg>
+                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('core_value_5_title') ?></h4>
+            </div>
+            <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_5_description') ?></p>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-1/3 px-3 sm:px-5 pt-3 sm:pt-5">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-lightgreen">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                </svg>
+                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('core_value_6_title') ?></h4>
+            </div>
+            <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_6_description') ?></p>
+        </div>
+    </div>
+</section>
+
+</main>
 
 <?php get_footer() ?>
