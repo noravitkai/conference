@@ -216,595 +216,1223 @@ Template Name: Home Page
         <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('programme_section_subheading') ?></h3>
     </div>
 
-    <!-- Day 2 Programme-->
-    <ol class="relative border-s border-zinc-300"> 
-        
-        <!-- Day 2 Keynote Address -->
-        <?php 
-        $day_2_keynote_group = get_field('day_2_keynote_address');
+    <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mb-10 sm:mb-12">
+        <!-- Day 1 Timeline-->
+        <div class="col-span-1 p-4 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
+            <h4 class="pb-5 sm:pb-6 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('day_1_date') ?></h4>
+            <ol class="relative border-s border-zinc-300"> 
+                <!-- Day 1 Keyone Address -->
+                <?php 
+                $day_1_keynote_group = get_field('day_1_keynote_address');
 
-        if ($day_2_keynote_group):
-            $day_2_keynote_address_start = $day_2_keynote_group['day_2_keynote_address_start'];
-            $day_2_keynote_address_end = $day_2_keynote_group['day_2_keynote_address_end'];
-            $day_2_keynote_address_field = $day_2_keynote_group['day_2_keynote_address_field'];
-            $day_2_keynote_speech_start = $day_2_keynote_group['day_2_keynote_speech_start'];
-            $day_2_keynote_speech_end = $day_2_keynote_group['day_2_keynote_speech_end'];
-            $day_2_keynote_speaker = $day_2_keynote_group['day_2_keynote_speaker'];
-            $day_2_keynote_address_title = $day_2_keynote_group['day_2_keynote_address_title'];
-            $day_2_keynote_discussion_start = $day_2_keynote_group['day_2_keynote_discussion_start'];
-            $day_2_keynote_discussion_end = $day_2_keynote_group['day_2_keynote_discussion_end'];
-            $day_2_keynote_discussion = $day_2_keynote_group['day_2_keynote_discussion'];
+                if ($day_1_keynote_group):
+                    $day_1_keynote_address_start = $day_1_keynote_group['day_1_keynote_address_start'];
+                    $day_1_keynote_address_end = $day_1_keynote_group['day_1_keynote_address_end'];
+                    $day_1_keynote_address_field = $day_1_keynote_group['day_1_keynote_address_field'];
+                    $day_1_keynote_speech_start = $day_1_keynote_group['day_1_keynote_speech_start'];
+                    $day_1_keynote_speech_end = $day_1_keynote_group['day_1_keynote_speech_end'];
+                    $day_1_keynote_speaker = $day_1_keynote_group['day_1_keynote_speaker'];
+                    $day_1_keynote_address_title = $day_1_keynote_group['day_1_keynote_address_title'];
+                    $day_1_keynote_discussion_start = $day_1_keynote_group['day_1_keynote_discussion_start'];
+                    $day_1_keynote_discussion_end = $day_1_keynote_group['day_1_keynote_discussion_end'];
+                    $day_1_keynote_discussion = $day_1_keynote_group['day_1_keynote_discussion'];
 
-            $has_content_day_2_keynote = !empty($day_2_keynote_address_start) || !empty($day_2_keynote_address_end) || !empty($day_2_keynote_address_field) || !empty($day_2_keynote_speech_start) || !empty($day_2_keynote_speech_end) || !empty($day_2_keynote_speaker) || !empty($day_2_keynote_address_title) || !empty($day_2_keynote_discussion_start) || !empty($day_2_keynote_discussion_end) || !empty($day_2_keynote_discussion);
+                    if (!empty($day_1_keynote_address_start) || !empty($day_1_keynote_address_end) || !empty($day_1_keynote_address_field) || !empty($day_1_keynote_speech_start) || !empty($day_1_keynote_speech_end) || !empty($day_1_keynote_speaker) || !empty($day_1_keynote_address_title) || !empty($day_1_keynote_discussion_start) || !empty($day_1_keynote_discussion_end) || !empty($day_1_keynote_discussion)):
+                ?>
+                        <li class="ms-4">
+                            <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
 
-            if ($has_content_day_2_keynote):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_keynote_address_start) && !empty($day_2_keynote_address_end) ) : ?>
-                            <?php echo esc_html($day_2_keynote_address_start) . '–' . esc_html($day_2_keynote_address_end); ?>
-                        <?php elseif (!empty($day_2_keynote_address_start)): ?>
-                            <?php echo esc_html($day_2_keynote_address_start); ?>
-                        <?php endif; ?>
-                    </time>
-                    <h4 class="pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_keynote_address_field) ) : ?>
-                        <?php echo esc_html( $day_2_keynote_address_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                    <div class="flex flex-col pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
-                        <?php if (!empty($day_2_keynote_speech_start) || !empty($day_2_keynote_speech_end)): ?>
-                            <div class="flex flex-row items-center">
-                                <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                </svg>
-                                <time class="pl-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                                    <?php if ( !empty($day_2_keynote_speech_start) && !empty($day_2_keynote_speech_end) ) : ?>
-                                        <?php echo esc_html($day_2_keynote_speech_start) . '–' . esc_html($day_2_keynote_speech_end); ?>
-                                    <?php elseif (!empty($day_2_keynote_speech_start)): ?>
-                                        <?php echo esc_html($day_2_keynote_speech_start); ?>
+                            <?php if (!empty($day_1_keynote_address_start) || !empty($day_1_keynote_address_end) || !empty($day_1_keynote_address_field)): ?>
+                                <!-- Keynote Time & Field -->
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                    <?php if (!empty($day_1_keynote_address_start) || !empty($day_1_keynote_address_end)): ?>
+                                        <time>
+                                            <?php echo esc_html($day_1_keynote_address_start) . '–' . esc_html($day_1_keynote_address_end); ?>
+                                        </time>
                                     <?php endif; ?>
-                                </time>
-                            </div>
-                        <?php endif; ?>
-                        <h5 class="pt-1 flex font-semibold">
-                            <?php if ( !empty($day_2_keynote_speaker) ) : ?>
-                            <?php echo esc_html( $day_2_keynote_speaker ); ?>
+
+                                    <?php if (!empty($day_1_keynote_address_field)): ?>
+                                        <h5>
+                                            <?php echo esc_html($day_1_keynote_address_field); ?>
+                                        </h5>
+                                    <?php endif; ?>
+                                </div>
                             <?php endif; ?>
-                        </h5>
-                        <p class="pt-1 font-medium">
-                            <?php if ( !empty($day_2_keynote_address_title) ) : ?>
-                            <?php echo esc_html( $day_2_keynote_address_title ); ?>
+
+                            <?php if (!empty($day_1_keynote_speech_start) || !empty($day_1_keynote_speech_end) || !empty($day_1_keynote_speaker) || !empty($day_1_keynote_address_title)): ?>
+                                <!-- Keynote Speech Time, Speaker & Title -->
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                                    <?php if (!empty($day_1_keynote_speech_start) || !empty($day_1_keynote_speech_end)): ?>
+                                        <div class="flex flex-row items-center">
+                                            <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                            <time class="pl-1 font-semibold">
+                                                <?php echo esc_html($day_1_keynote_speech_start) . '–' . esc_html($day_1_keynote_speech_end); ?>
+                                            </time>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($day_1_keynote_speaker)): ?>
+                                        <h5 class="font-semibold">
+                                            <?php echo esc_html($day_1_keynote_speaker); ?>
+                                        </h5>
+                                    <?php endif; ?>
+                                    <?php if (!empty($day_1_keynote_address_title)): ?>
+                                        <p class="font-medium">
+                                            <?php echo esc_html($day_1_keynote_address_title); ?>
+                                        </p>
+                                    <?php endif; ?>
+                                </div>
                             <?php endif; ?>
-                        </p>
-                    </div>
-                    <?php if (!empty($day_2_keynote_discussion_start) || !empty($day_2_keynote_discussion_end)): ?>
-                        <div class="flex flex-row items-center">
-                            <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <time class="pl-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                                <?php if ( !empty($day_2_keynote_discussion_start) && !empty($day_2_keynote_discussion_end) ) : ?>
-                                    <?php echo esc_html($day_2_keynote_discussion_start) . '–' . esc_html($day_2_keynote_discussion_end); ?>
-                                <?php elseif (!empty($day_2_keynote_discussion_start)): ?>
-                                    <?php echo esc_html($day_2_keynote_discussion_start); ?>
-                                <?php endif; ?>
-                            </time>
-                        </div>
+
+                            <?php if (!empty($day_1_keynote_discussion_start) || !empty($day_1_keynote_discussion_end) || !empty($day_1_keynote_discussion)): ?>
+                                <!-- Keynote Discussion Time & Field -->
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
+                                    <?php if (!empty($day_1_keynote_discussion_start) || !empty($day_1_keynote_discussion_end)): ?>
+                                        <div class="flex flex-row items-center">
+                                            <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                            <time class="pl-1">
+                                                <?php echo esc_html($day_1_keynote_discussion_start) . '–' . esc_html($day_1_keynote_discussion_end); ?>
+                                            </time>
+                                        </div>
+                                    <?php endif; ?>
+                                    <h5">
+                                        <?php echo esc_html($day_1_keynote_discussion); ?>
+                                    </h5>
+                                </div>
+                            <?php endif; ?>
+                        </li>
                     <?php endif; ?>
-                    <h5 class="pt-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold leading-relaxed">
-                        <?php if ( !empty($day_2_keynote_discussion) ) : ?>
-                        <?php echo esc_html( $day_2_keynote_discussion ); ?>
+                <?php endif; ?>
+
+                <!-- Day 1 Break 1 -->
+                <?php 
+                $day_1_break_1_group = get_field('day_1_break_1');
+
+                if ($day_1_break_1_group):
+                    $day_1_break_1_start = $day_1_break_1_group['day_1_break_1_start'];
+                    $day_1_break_1_end = $day_1_break_1_group['day_1_break_1_end'];
+                    $day_1_break_1_field = $day_1_break_1_group['day_1_break_1_field'];
+
+                    if (!empty($day_1_break_1_start) || !empty($day_1_break_1_end) || !empty($day_1_break_1_field)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <?php if (!empty($day_1_break_1_start) || !empty($day_1_break_1_end) || !empty($day_1_break_1_field)): ?>
+                            <!-- Break Time & Field -->
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                <?php if (!empty($day_1_break_1_start) || !empty($day_1_break_1_end)): ?>
+                                    <time>
+                                        <?php echo esc_html($day_1_break_1_start) . (empty($day_1_break_1_end) ? '' : '–' . esc_html($day_1_break_1_end)); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_break_1_field)): ?>
+                                    <h5>
+                                        <?php echo esc_html($day_1_break_1_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
                         <?php endif; ?>
-                    </h5>
-                </li>
-            <?php endif; ?>
-        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
 
-        <!-- Day 2 Break 1 -->
-        <?php 
-        $day_2_break_1_group = get_field('day_2_break_1');
+                <!-- Day 1 Session 1 -->
+                <?php 
+                $day_1_session_1_group = get_field('day_1_session_1');
 
-        if ($day_2_break_1_group):
-            $day_2_break_1_start = $day_2_break_1_group['day_2_break_1_start'];
-            $day_2_break_1_end = $day_2_break_1_group['day_2_break_1_end'];
-            $day_2_break_1_field = $day_2_break_1_group['day_2_break_1_field'];
+                if ($day_1_session_1_group):
+                    $day_1_session_1_start = $day_1_session_1_group['day_1_session_1_start'];
+                    $day_1_session_1_end = $day_1_session_1_group['day_1_session_1_end'];
+                    $day_1_session_1_field = $day_1_session_1_group['day_1_session_1_field'];
+                    $day_1_session_1_chair_name = $day_1_session_1_group['day_1_session_1_chair_name'];
+                    $day_1_session_1_title = $day_1_session_1_group['day_1_session_1_title'];
+                    $day_1_session_1_speakers = $day_1_session_1_group['day_1_session_1_speakers'];
+                    $day_1_session_1_discussion_start = $day_1_session_1_group['day_1_session_1_discussion_start'];
+                    $day_1_session_1_discussion_end = $day_1_session_1_group['day_1_session_1_discussion_end'];
+                    $day_1_session_1_discussion = $day_1_session_1_group['day_1_session_1_discussion'];
 
-            $has_content_day_2_break_1 = !empty($day_2_break_1_start) || !empty($day_2_break_1_end) || !empty($day_2_break_1_field);
+                    if (!empty($day_1_session_1_start) || !empty($day_1_session_1_end) || !empty($day_1_session_1_field) || !empty($day_1_session_1_chair_name) || !empty($day_1_session_1_title) || !empty($day_1_session_1_speakers) || !empty($day_1_session_1_discussion_start) || !empty($day_1_session_1_discussion_end) || !empty($day_1_session_1_discussion)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
 
-            if ($has_content_day_2_break_1):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_break_1_start) && !empty($day_2_break_1_end) ) : ?>
-                            <?php echo esc_html($day_2_break_1_start) . '–' . esc_html($day_2_break_1_end); ?>
-                        <?php elseif (!empty($day_2_break_1_start)): ?>
-                            <?php echo esc_html($day_2_break_1_start); ?>
+                        <!-- Session Time, Field, Chair & Title -->
+                        <?php if (!empty($day_1_session_1_start) || !empty($day_1_session_1_end) || !empty($day_1_session_1_field) || !empty($day_1_session_1_chair_name) || !empty($day_1_session_1_title)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 leading-relaxed">
+                                <?php if (!empty($day_1_session_1_start) || !empty($day_1_session_1_end)): ?>
+                                    <time class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_1_session_1_start) . (!empty($day_1_session_1_end) ? '–' . esc_html($day_1_session_1_end) : ''); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_1_field)): ?>
+                                    <h5 class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_1_session_1_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_1_chair_name)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                        <?php echo esc_html($day_1_session_1_chair_name); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_1_title)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
+                                        <?php echo esc_html($day_1_session_1_title); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
                         <?php endif; ?>
-                    </time>
-                    <h4 class="pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_break_1_field) ) : ?>
-                        <?php echo esc_html( $day_2_break_1_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                </li>
-            <?php endif; ?>
-        <?php endif; ?>
 
-        <!-- Day 2 Session 1 -->
-        <?php 
-        $day_2_session_1_group = get_field('day_2_session_1');
-
-        if ($day_2_session_1_group):
-            $day_2_session_1_start = $day_2_session_1_group['day_2_session_1_start'];
-            $day_2_session_1_end = $day_2_session_1_group['day_2_session_1_end'];
-            $day_2_session_1_field = $day_2_session_1_group['day_2_session_1_field'];
-            $day_2_session_1_chair_name = $day_2_session_1_group['day_2_session_1_chair_name'];
-            $day_2_session_1_title = $day_2_session_1_group['day_2_session_1_title'];
-            $day_2_session_1_speakers = $day_2_session_1_group['day_2_session_1_speakers'];
-            $day_2_session_1_discussion_start = $day_2_session_1_group['day_2_session_1_discussion_start'];
-            $day_2_session_1_discussion_end = $day_2_session_1_group['day_2_session_1_discussion_end'];
-            $day_2_session_1_discussion = $day_2_session_1_group['day_2_session_1_discussion'];
-
-            $has_content_day_2_session_1 = !empty($day_2_session_1_start) || !empty($day_2_session_1_end) || !empty($day_2_session_1_field) || !empty($day_2_session_1_chair_name) || !empty($day_2_session_1_title);
-
-            if ($has_content_day_2_session_1):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_session_1_start) && !empty($day_2_session_1_end) ) : ?>
-                            <?php echo esc_html($day_2_session_1_start) . '–' . esc_html($day_2_session_1_end); ?>
-                        <?php elseif (!empty($day_2_session_1_start)): ?>
-                            <?php echo esc_html($day_2_session_1_start); ?>
+                        <!-- Session Speakers -->
+                        <?php if (!empty($day_1_session_1_speakers)): ?>
+                            <?php foreach ($day_1_session_1_speakers as $post): ?>
+                                <?php setup_postdata($post); ?>
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                                    <div class="flex flex-row items-center">
+                                        <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <time class="pl-1 font-semibold">
+                                            <?php 
+                                            $presentation_start = get_field('presentation_start');
+                                            $presentation_end = get_field('presentation_end');
+                                            if (!empty($presentation_start) && !empty($presentation_end)) : ?>
+                                                <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
+                                            <?php elseif (!empty($presentation_start)): ?>
+                                                <?php echo esc_html($presentation_start); ?>
+                                            <?php endif; ?>
+                                        </time>
+                                    </div>
+                                    <div class="flex flex-row items-center">
+                                        <?php $speaker_img = get_field('speaker_img'); ?>
+                                        <?php if ($speaker_img) : ?>
+                                            <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
+                                        <?php endif; ?> 
+                                        <h5 class="pl-1 flex font-semibold">
+                                            <?php echo esc_html(get_field('speaker_name')); ?>
+                                        </h5>
+                                    </div>
+                                    <p class="font-medium">
+                                        <?php echo esc_html(get_field('presentation_title')); ?>
+                                    </p>
+                                </div>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
                         <?php endif; ?>
-                    </time>
-                    <h4 class="pb-1 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_session_1_field) ) : ?>
-                        <?php echo esc_html( $day_2_session_1_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                    <h4 class="pb-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                        <?php if ( !empty($day_2_session_1_chair_name) ) : ?>
-                        <?php echo esc_html( $day_2_session_1_chair_name ); ?>
-                        <?php endif; ?>
-                    </h4>
-                    <h4 class="pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
-                        <?php if ( !empty($day_2_session_1_title) ) : ?>
-                        <?php echo esc_html( $day_2_session_1_title ); ?>
-                        <?php endif; ?>
-                    </h4>
 
-                    <?php if (!empty($day_2_session_1_speakers)): ?>
-                        <?php foreach ($day_2_session_1_speakers as $post): ?>
-                            <?php setup_postdata($post); ?>
-                            <div class="flex flex-col pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                        <!-- Session Discussion Time & Field -->
+                        <?php if (!empty($day_1_session_1_discussion_start) || !empty($day_1_session_1_discussion_end) || !empty($day_1_session_1_discussion)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
                                 <div class="flex flex-row items-center">
                                     <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                     </svg>
-                                    <time class="pl-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                                        <?php 
-                                        $presentation_start = get_field('presentation_start');
-                                        $presentation_end = get_field('presentation_end');
-                                        if ( !empty($presentation_start) && !empty($presentation_end) ) : ?>
-                                            <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
-                                        <?php elseif (!empty($presentation_start)): ?>
-                                            <?php echo esc_html($presentation_start); ?>
+                                    <time class="pl-1">
+                                        <?php if (!empty($day_1_session_1_discussion_start) && !empty($day_1_session_1_discussion_end)) : ?>
+                                            <?php echo esc_html($day_1_session_1_discussion_start) . '–' . esc_html($day_1_session_1_discussion_end); ?>
+                                        <?php elseif (!empty($day_1_session_1_discussion_start)): ?>
+                                            <?php echo esc_html($day_1_session_1_discussion_start); ?>
                                         <?php endif; ?>
                                     </time>
                                 </div>
-                                <div class="pt-1 flex flex-row items-center">
-                                    <?php $speaker_img = get_field('speaker_img'); ?>
-                                    <?php if ($speaker_img) : ?>
-                                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
-                                    <?php endif; ?> 
-                                    <h5 class="pl-1 flex font-semibold">
-                                        <?php echo esc_html(get_field('speaker_name')); ?>
-                                    </h5>
-                                </div>
-                                <p class="pt-1 font-medium">
-                                    <?php echo esc_html(get_field('presentation_title')); ?>
-                                </p>
-                                <div class="inline-block">
-                                    <a href="#" class="pt-1 group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
-                                        <p class="pr-1">Absztrakt</p>
-                                        <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                            <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
-                                        </svg>
-                                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php else: ?>
-                        <p>Hiba a betöltéskor.</p>
-                    <?php endif; ?>
-
-                    <?php if (!empty($day_2_session_1_discussion_start) || !empty($day_2_session_1_discussion_end)): ?>
-                        <div class="flex flex-row items-center">
-                            <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <time class="pl-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                                <?php if ( !empty($day_2_session_1_discussion_start) && !empty($day_2_session_1_discussion_end) ) : ?>
-                                    <?php echo esc_html($day_2_session_1_discussion_start) . '–' . esc_html($day_2_session_1_discussion_end); ?>
-                                <?php elseif (!empty($day_2_session_1_discussion_start)): ?>
-                                    <?php echo esc_html($day_2_session_1_discussion_start); ?>
+                                <?php if (!empty($day_1_session_1_discussion)): ?>
+                                <h5>
+                                    <?php echo esc_html($day_1_session_1_discussion); ?>
+                                </h5>
                                 <?php endif; ?>
-                            </time>
-                        </div>
-                    <?php endif; ?>
-                    <h5 class="pt-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold leading-relaxed">
-                        <?php if ( !empty($day_2_session_1_discussion) ) : ?>
-                        <?php echo esc_html( $day_2_session_1_discussion ); ?>
+                            </div>
                         <?php endif; ?>
-                    </h5>
-                </li>
-            <?php endif; ?>
-        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
 
-        <!-- Day 2 Break 2 -->
-        <?php 
-        $day_2_break_2_group = get_field('day_2_break_2');
+                <!-- Day 1 Break 2 -->
+                <?php 
+                $day_1_break_2_group = get_field('day_1_break_2');
 
-        if ($day_2_break_2_group):
-            $day_2_break_2_start = $day_2_break_2_group['day_2_break_2_start'] ?? '';
-            $day_2_break_2_end = $day_2_break_2_group['day_2_break_2_end'] ?? '';
-            $day_2_break_2_field = $day_2_break_2_group['day_2_break_2_field'] ?? '';
+                if ($day_1_break_2_group):
+                    $day_1_break_2_start = $day_1_break_2_group['day_1_break_2_start'];
+                    $day_1_break_2_end = $day_1_break_2_group['day_1_break_2_end'];
+                    $day_1_break_2_field = $day_1_break_2_group['day_1_break_2_field'];
 
-            $has_content_day_2_break_2 = !empty($day_2_break_2_start) || !empty($day_2_break_2_end) || !empty($day_2_break_2_field);
+                    if (!empty($day_1_break_2_start) || !empty($day_1_break_2_end) || !empty($day_1_break_2_field)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
 
-            if ($has_content_day_2_break_2):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_break_2_start) && !empty($day_2_break_2_end) ) : ?>
-                            <?php echo esc_html($day_2_break_2_start) . '–' . esc_html($day_2_break_2_end); ?>
-                        <?php elseif (!empty($day_2_break_2_start)): ?>
-                            <?php echo esc_html($day_2_break_2_start); ?>
+                        <?php if (!empty($day_1_break_2_start) || !empty($day_1_break_2_end) || !empty($day_1_break_2_field)): ?>
+                            <!-- Break Time & Field -->
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                <?php if (!empty($day_1_break_2_start) || !empty($day_1_break_2_end)): ?>
+                                    <time>
+                                        <?php echo esc_html($day_1_break_2_start) . (empty($day_1_break_2_end) ? '' : '–' . esc_html($day_1_break_2_end)); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_break_2_field)): ?>
+                                    <h5>
+                                        <?php echo esc_html($day_1_break_2_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
                         <?php endif; ?>
-                    </time>
-                    <h4 class="pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_break_2_field) ) : ?>
-                        <?php echo esc_html( $day_2_break_2_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                </li>
-            <?php endif; ?>
-        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
 
-        <!-- Day 2 Session 2 -->
-        <?php 
-        $day_2_session_2_group = get_field('day_2_session_2');
+                <!-- Day 1 Session 2 -->
+                <?php 
+                $day_1_session_2_group = get_field('day_1_session_2');
 
-        if ($day_2_session_2_group):
-            $day_2_session_2_start = $day_2_session_2_group['day_2_session_2_start'];
-            $day_2_session_2_end = $day_2_session_2_group['day_2_session_2_end'];
-            $day_2_session_2_field = $day_2_session_2_group['day_2_session_2_field'];
-            $day_2_session_2_chair_name = $day_2_session_2_group['day_2_session_2_chair_name'];
-            $day_2_session_2_title = $day_2_session_2_group['day_2_session_2_title'];
-            $day_2_session_2_speakers = $day_2_session_2_group['day_2_session_2_speakers'];
-            $day_2_session_2_discussion_start = $day_2_session_2_group['day_2_session_2_discussion_start'];
-            $day_2_session_2_discussion_end = $day_2_session_2_group['day_2_session_2_discussion_end'];
-            $day_2_session_2_discussion = $day_2_session_2_group['day_2_session_2_discussion'];
+                if ($day_1_session_2_group):
+                    $day_1_session_2_start = $day_1_session_2_group['day_1_session_2_start'];
+                    $day_1_session_2_end = $day_1_session_2_group['day_1_session_2_end'];
+                    $day_1_session_2_field = $day_1_session_2_group['day_1_session_2_field'];
+                    $day_1_session_2_chair_name = $day_1_session_2_group['day_1_session_2_chair_name'];
+                    $day_1_session_2_title = $day_1_session_2_group['day_1_session_2_title'];
+                    $day_1_session_2_speakers = $day_1_session_2_group['day_1_session_2_speakers'];
+                    $day_1_session_2_discussion_start = $day_1_session_2_group['day_1_session_2_discussion_start'];
+                    $day_1_session_2_discussion_end = $day_1_session_2_group['day_1_session_2_discussion_end'];
+                    $day_1_session_2_discussion = $day_1_session_2_group['day_1_session_2_discussion'];
 
-            $has_content_day_2_session_2 = !empty($day_2_session_2_start) || !empty($day_2_session_2_end) || !empty($day_2_session_2_field) || !empty($day_2_session_2_chair_name) || !empty($day_2_session_2_title);
+                    if (!empty($day_1_session_2_start) || !empty($day_1_session_2_end) || !empty($day_1_session_2_field) || !empty($day_1_session_2_chair_name) || !empty($day_1_session_2_title) || !empty($day_1_session_2_speakers) || !empty($day_1_session_2_discussion_start) || !empty($day_1_session_2_discussion_end) || !empty($day_1_session_2_discussion)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
 
-            if ($has_content_day_2_session_2):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_session_2_start) && !empty($day_2_session_2_end) ) : ?>
-                            <?php echo esc_html($day_2_session_2_start) . '–' . esc_html($day_2_session_2_end); ?>
-                        <?php elseif (!empty($day_2_session_2_start)): ?>
-                            <?php echo esc_html($day_2_session_2_start); ?>
+                        <!-- Session Time, Field, Chair & Title -->
+                        <?php if (!empty($day_1_session_2_start) || !empty($day_1_session_2_end) || !empty($day_1_session_2_field) || !empty($day_1_session_2_chair_name) || !empty($day_1_session_2_title)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 leading-relaxed">
+                                <?php if (!empty($day_1_session_2_start) || !empty($day_1_session_2_end)): ?>
+                                    <time class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_1_session_2_start) . (!empty($day_1_session_2_end) ? '–' . esc_html($day_1_session_2_end) : ''); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_2_field)): ?>
+                                    <h5 class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_1_session_2_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_2_chair_name)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                        <?php echo esc_html($day_1_session_2_chair_name); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_2_title)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
+                                        <?php echo esc_html($day_1_session_2_title); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
                         <?php endif; ?>
-                    </time>
-                    <h4 class="pb-1 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_session_2_field) ) : ?>
-                        <?php echo esc_html( $day_2_session_2_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                    <h4 class="pb-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                        <?php if ( !empty($day_2_session_2_chair_name) ) : ?>
-                        <?php echo esc_html( $day_2_session_2_chair_name ); ?>
-                        <?php endif; ?>
-                    </h4>
-                    <h4 class="pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
-                        <?php if ( !empty($day_2_session_2_title) ) : ?>
-                        <?php echo esc_html( $day_2_session_2_title ); ?>
-                        <?php endif; ?>
-                    </h4>
 
-                    <?php if (!empty($day_2_session_2_speakers)): ?>
-                        <?php foreach ($day_2_session_2_speakers as $post): ?>
-                            <?php setup_postdata($post); ?>
-                            <div class="flex flex-col pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                        <!-- Session Speakers -->
+                        <?php if (!empty($day_1_session_2_speakers)): ?>
+                            <?php foreach ($day_1_session_2_speakers as $post): ?>
+                                <?php setup_postdata($post); ?>
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                                    <div class="flex flex-row items-center">
+                                        <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <time class="pl-1 font-semibold">
+                                            <?php 
+                                            $presentation_start = get_field('presentation_start');
+                                            $presentation_end = get_field('presentation_end');
+                                            if (!empty($presentation_start) && !empty($presentation_end)) : ?>
+                                                <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
+                                            <?php elseif (!empty($presentation_start)): ?>
+                                                <?php echo esc_html($presentation_start); ?>
+                                            <?php endif; ?>
+                                        </time>
+                                    </div>
+                                    <div class="flex flex-row items-center">
+                                        <?php $speaker_img = get_field('speaker_img'); ?>
+                                        <?php if ($speaker_img) : ?>
+                                            <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
+                                        <?php endif; ?> 
+                                        <h5 class="pl-1 flex font-semibold">
+                                            <?php echo esc_html(get_field('speaker_name')); ?>
+                                        </h5>
+                                    </div>
+                                    <p class="font-medium">
+                                        <?php echo esc_html(get_field('presentation_title')); ?>
+                                    </p>
+                                </div>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+
+                        <!-- Session Discussion Time & Field -->
+                        <?php if (!empty($day_1_session_2_discussion_start) || !empty($day_1_session_2_discussion_end) || !empty($day_1_session_2_discussion)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
                                 <div class="flex flex-row items-center">
                                     <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                     </svg>
-                                    <time class="pl-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                                        <?php 
-                                        $presentation_start = get_field('presentation_start');
-                                        $presentation_end = get_field('presentation_end');
-                                        if ( !empty($presentation_start) && !empty($presentation_end) ) : ?>
-                                            <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
-                                        <?php elseif (!empty($presentation_start)): ?>
-                                            <?php echo esc_html($presentation_start); ?>
+                                    <time class="pl-1">
+                                        <?php if (!empty($day_1_session_2_discussion_start) && !empty($day_1_session_2_discussion_end)) : ?>
+                                            <?php echo esc_html($day_1_session_2_discussion_start) . '–' . esc_html($day_1_session_2_discussion_end); ?>
+                                        <?php elseif (!empty($day_1_session_2_discussion_start)): ?>
+                                            <?php echo esc_html($day_1_session_2_discussion_start); ?>
                                         <?php endif; ?>
                                     </time>
                                 </div>
-                                <div class="pt-1 flex flex-row items-center">
-                                    <?php $speaker_img = get_field('speaker_img'); ?>
-                                    <?php if ($speaker_img) : ?>
-                                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
-                                    <?php endif; ?> 
-                                    <h5 class="pl-1 flex font-semibold">
-                                        <?php echo esc_html(get_field('speaker_name')); ?>
-                                    </h5>
-                                </div>
-                                <p class="pt-1 font-medium">
-                                    <?php echo esc_html(get_field('presentation_title')); ?>
-                                </p>
-                                <div class="inline-block">
-                                    <a href="#" class="pt-1 group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
-                                        <p class="pr-1">Absztrakt</p>
-                                        <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                            <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
-                                        </svg>
-                                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php else: ?>
-                        <p>Hiba a betöltéskor.</p>
-                    <?php endif; ?>
-
-                    <?php if (!empty($day_2_session_2_discussion_start) || !empty($day_2_session_2_discussion_end)): ?>
-                        <div class="flex flex-row items-center">
-                            <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <time class="pl-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                                <?php if ( !empty($day_2_session_2_discussion_start) && !empty($day_2_session_2_discussion_end) ) : ?>
-                                    <?php echo esc_html($day_2_session_2_discussion_start) . '–' . esc_html($day_2_session_2_discussion_end); ?>
-                                <?php elseif (!empty($day_2_session_2_discussion_start)): ?>
-                                    <?php echo esc_html($day_2_session_2_discussion_start); ?>
+                                <?php if (!empty($day_1_session_2_discussion)): ?>
+                                <h5>
+                                    <?php echo esc_html($day_1_session_2_discussion); ?>
+                                </h5>
                                 <?php endif; ?>
-                            </time>
-                        </div>
-                    <?php endif; ?>
-                    <h5 class="pt-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold leading-relaxed">
-                        <?php if ( !empty($day_2_session_2_discussion) ) : ?>
-                        <?php echo esc_html( $day_2_session_2_discussion ); ?>
+                            </div>
                         <?php endif; ?>
-                    </h5>
-                </li>
-            <?php endif; ?>            
-        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
 
-        <!-- Day 2 Break 3 -->
-        <?php 
-        $day_2_break_3_group = get_field('day_2_break_3');
+                <!-- Day 1 Break 3 -->
+                <?php 
+                $day_1_break_3_group = get_field('day_1_break_3');
 
-        if ($day_2_break_3_group):
-            $day_2_break_3_start = $day_2_break_3_group['day_2_break_3_start'] ?? '';
-            $day_2_break_3_end = $day_2_break_3_group['day_2_break_3_end'] ?? '';
-            $day_2_break_3_field = $day_2_break_3_group['day_2_break_3_field'] ?? '';
+                if ($day_1_break_3_group):
+                    $day_1_break_3_start = $day_1_break_3_group['day_1_break_3_start'];
+                    $day_1_break_3_end = $day_1_break_3_group['day_1_break_3_end'];
+                    $day_1_break_3_field = $day_1_break_3_group['day_1_break_3_field'];
 
-            $has_content_day_2_break_3 = !empty($day_2_break_3_start) || !empty($day_2_break_3_end) || !empty($day_2_break_3_field);
+                    if (!empty($day_1_break_3_start) || !empty($day_1_break_3_end) || !empty($day_1_break_3_field)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
 
-            if ($has_content_day_2_break_3):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_break_3_start) && !empty($day_2_break_3_end) ) : ?>
-                            <?php echo esc_html($day_2_break_3_start) . '–' . esc_html($day_2_break_3_end); ?>
-                        <?php elseif (!empty($day_2_break_3_start)): ?>
-                            <?php echo esc_html($day_2_break_3_start); ?>
+                        <?php if (!empty($day_1_break_3_start) || !empty($day_1_break_3_end) || !empty($day_1_break_3_field)): ?>
+                            <!-- Break Time & Field -->
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                <?php if (!empty($day_1_break_3_start) || !empty($day_1_break_3_end)): ?>
+                                    <time>
+                                        <?php echo esc_html($day_1_break_3_start) . (empty($day_1_break_3_end) ? '' : '–' . esc_html($day_1_break_3_end)); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_break_3_field)): ?>
+                                    <h5>
+                                        <?php echo esc_html($day_1_break_3_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
                         <?php endif; ?>
-                    </time>
-                    <h4 class="pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_break_3_field) ) : ?>
-                        <?php echo esc_html( $day_2_break_3_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                </li>
-            <?php endif; ?>
-        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
 
-        <!-- Day 2 Session 3 -->
-        <?php 
-        $day_2_session_3_group = get_field('day_2_session_3');
+                <!-- Day 1 Session 3 -->
+                <?php 
+                $day_1_session_3_group = get_field('day_1_session_3');
 
-        if ($day_2_session_3_group):
-            $day_2_session_3_start = $day_2_session_3_group['day_2_session_3_start'];
-            $day_2_session_3_end = $day_2_session_3_group['day_2_session_3_end'];
-            $day_2_session_3_field = $day_2_session_3_group['day_2_session_3_field'];
-            $day_2_session_3_chair_name = $day_2_session_3_group['day_2_session_3_chair_name'];
-            $day_2_session_3_title = $day_2_session_3_group['day_2_session_3_title'];
-            $day_2_session_3_speakers = $day_2_session_3_group['day_2_session_3_speakers'];
-            $day_2_session_3_discussion_start = $day_2_session_3_group['day_2_session_3_discussion_start'];
-            $day_2_session_3_discussion_end = $day_2_session_3_group['day_2_session_3_discussion_end'];
-            $day_2_session_3_discussion = $day_2_session_3_group['day_2_session_3_discussion'];
+                if ($day_1_session_3_group):
+                    $day_1_session_3_start = $day_1_session_3_group['day_1_session_3_start'];
+                    $day_1_session_3_end = $day_1_session_3_group['day_1_session_3_end'];
+                    $day_1_session_3_field = $day_1_session_3_group['day_1_session_3_field'];
+                    $day_1_session_3_chair_name = $day_1_session_3_group['day_1_session_3_chair_name'];
+                    $day_1_session_3_title = $day_1_session_3_group['day_1_session_3_title'];
+                    $day_1_session_3_speakers = $day_1_session_3_group['day_1_session_3_speakers'];
+                    $day_1_session_3_discussion_start = $day_1_session_3_group['day_1_session_3_discussion_start'];
+                    $day_1_session_3_discussion_end = $day_1_session_3_group['day_1_session_3_discussion_end'];
+                    $day_1_session_3_discussion = $day_1_session_3_group['day_1_session_3_discussion'];
 
-            $has_content_day_2_session_3 = !empty($day_2_session_3_start) || !empty($day_2_session_3_end) || !empty($day_2_session_3_field) || !empty($day_2_session_3_chair_name) || !empty($day_2_session_3_title);
+                    if (!empty($day_1_session_3_start) || !empty($day_1_session_3_end) || !empty($day_1_session_3_field) || !empty($day_1_session_3_chair_name) || !empty($day_1_session_3_title) || !empty($day_1_session_3_speakers) || !empty($day_1_session_3_discussion_start) || !empty($day_1_session_3_discussion_end) || !empty($day_1_session_3_discussion)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
 
-            if ($has_content_day_2_session_3):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_session_3_start) && !empty($day_2_session_3_end) ) : ?>
-                            <?php echo esc_html($day_2_session_3_start) . '–' . esc_html($day_2_session_3_end); ?>
-                        <?php elseif (!empty($day_2_session_3_start)): ?>
-                            <?php echo esc_html($day_2_session_3_start); ?>
+                        <!-- Session Time, Field, Chair & Title -->
+                        <?php if (!empty($day_1_session_3_start) || !empty($day_1_session_3_end) || !empty($day_1_session_3_field) || !empty($day_1_session_3_chair_name) || !empty($day_1_session_3_title)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 leading-relaxed">
+                                <?php if (!empty($day_1_session_3_start) || !empty($day_1_session_3_end)): ?>
+                                    <time class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_1_session_3_start) . (!empty($day_1_session_3_end) ? '–' . esc_html($day_1_session_3_end) : ''); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_3_field)): ?>
+                                    <h5 class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_1_session_3_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_3_chair_name)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                        <?php echo esc_html($day_1_session_3_chair_name); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_session_3_title)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
+                                        <?php echo esc_html($day_1_session_3_title); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
                         <?php endif; ?>
-                    </time>
-                    <h4 class="pb-1 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_session_3_field) ) : ?>
-                        <?php echo esc_html( $day_2_session_3_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                    <h4 class="pb-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                        <?php if ( !empty($day_2_session_3_chair_name) ) : ?>
-                        <?php echo esc_html( $day_2_session_3_chair_name ); ?>
-                        <?php endif; ?>
-                    </h4>
-                    <h4 class="pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
-                        <?php if ( !empty($day_2_session_3_title) ) : ?>
-                        <?php echo esc_html( $day_2_session_3_title ); ?>
-                        <?php endif; ?>
-                    </h4>
 
-                    <?php if (!empty($day_2_session_3_speakers)): ?>
-                        <?php foreach ($day_2_session_3_speakers as $post): ?>
-                            <?php setup_postdata($post); ?>
-                            <div class="flex flex-col pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                        <!-- Session Speakers -->
+                        <?php if (!empty($day_1_session_3_speakers)): ?>
+                            <?php foreach ($day_1_session_3_speakers as $post): ?>
+                                <?php setup_postdata($post); ?>
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                                    <div class="flex flex-row items-center">
+                                        <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <time class="pl-1 font-semibold">
+                                            <?php 
+                                            $presentation_start = get_field('presentation_start');
+                                            $presentation_end = get_field('presentation_end');
+                                            if (!empty($presentation_start) && !empty($presentation_end)) : ?>
+                                                <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
+                                            <?php elseif (!empty($presentation_start)): ?>
+                                                <?php echo esc_html($presentation_start); ?>
+                                            <?php endif; ?>
+                                        </time>
+                                    </div>
+                                    <div class="flex flex-row items-center">
+                                        <?php $speaker_img = get_field('speaker_img'); ?>
+                                        <?php if ($speaker_img) : ?>
+                                            <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
+                                        <?php endif; ?> 
+                                        <h5 class="pl-1 flex font-semibold">
+                                            <?php echo esc_html(get_field('speaker_name')); ?>
+                                        </h5>
+                                    </div>
+                                    <p class="font-medium">
+                                        <?php echo esc_html(get_field('presentation_title')); ?>
+                                    </p>
+                                </div>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+
+                        <!-- Session Discussion Time & Field -->
+                        <?php if (!empty($day_1_session_3_discussion_start) || !empty($day_1_session_3_discussion_end) || !empty($day_1_session_3_discussion)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
                                 <div class="flex flex-row items-center">
                                     <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                     </svg>
-                                    <time class="pl-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                                        <?php 
-                                        $presentation_start = get_field('presentation_start');
-                                        $presentation_end = get_field('presentation_end');
-                                        if ( !empty($presentation_start) && !empty($presentation_end) ) : ?>
-                                            <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
-                                        <?php elseif (!empty($presentation_start)): ?>
-                                            <?php echo esc_html($presentation_start); ?>
+                                    <time class="pl-1">
+                                        <?php if (!empty($day_1_session_3_discussion_start) && !empty($day_1_session_3_discussion_end)) : ?>
+                                            <?php echo esc_html($day_1_session_3_discussion_start) . '–' . esc_html($day_1_session_3_discussion_end); ?>
+                                        <?php elseif (!empty($day_1_session_3_discussion_start)): ?>
+                                            <?php echo esc_html($day_1_session_3_discussion_start); ?>
                                         <?php endif; ?>
                                     </time>
                                 </div>
-                                <div class="pt-1 flex flex-row items-center">
-                                    <?php $speaker_img = get_field('speaker_img'); ?>
-                                    <?php if ($speaker_img) : ?>
-                                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
-                                    <?php endif; ?> 
-                                    <h5 class="pl-1 flex font-semibold">
-                                        <?php echo esc_html(get_field('speaker_name')); ?>
+                                <?php if (!empty($day_1_session_3_discussion)): ?>
+                                <h5>
+                                    <?php echo esc_html($day_1_session_3_discussion); ?>
+                                </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 1 Break 4 -->
+                <?php 
+                $day_1_break_4_group = get_field('day_1_break_4');
+
+                if ($day_1_break_4_group):
+                    $day_1_break_4_start = $day_1_break_4_group['day_1_break_4_start'];
+                    $day_1_break_4_end = $day_1_break_4_group['day_1_break_4_end'];
+                    $day_1_break_4_field = $day_1_break_4_group['day_1_break_4_field'];
+
+                    if (!empty($day_1_break_4_start) || !empty($day_1_break_4_end) || !empty($day_1_break_4_field)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <?php if (!empty($day_1_break_4_start) || !empty($day_1_break_4_end) || !empty($day_1_break_4_field)): ?>
+                            <!-- Break Time & Field -->
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                <?php if (!empty($day_1_break_4_start) || !empty($day_1_break_4_end)): ?>
+                                    <time>
+                                        <?php echo esc_html($day_1_break_4_start) . (empty($day_1_break_4_end) ? '' : '–' . esc_html($day_1_break_4_end)); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_1_break_4_field)): ?>
+                                    <h5>
+                                        <?php echo esc_html($day_1_break_4_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 1 Special Event -->
+                <?php 
+                $day_1_special_group = get_field('day_1_special_event');
+
+                if ($day_1_special_group):
+                    $day_1_special_event_start = $day_1_special_group['day_1_special_event_start'] ?? '';
+                    $day_1_special_event_end = $day_1_special_group['day_1_special_event_end'] ?? '';
+                    $day_1_special_event_field = $day_1_special_group['day_1_special_event_field'] ?? '';
+                    $day_1_special_event_description = $day_1_special_group['day_1_special_event_description'] ?? '';
+
+                    $has_content_day_1_special = !empty($day_1_special_event_start) || !empty($day_1_special_event_end) || !empty($day_1_special_event_field) || !empty($day_1_special_event_description);
+
+                    if ($has_content_day_1_special):
+                    ?>
+                        <li class="ms-4">
+                            <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                            <!-- Special Time & Field -->
+                            <?php if (!empty($day_1_special_event_start) || !empty($day_1_special_event_end) || !empty($day_1_special_event_field)): ?>
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                    <?php if (!empty($day_1_special_event_start) || !empty($day_1_special_event_end)): ?>
+                                        <time>
+                                            <?php echo esc_html($day_1_special_event_start) . (!empty($day_1_special_event_end) ? '–' . esc_html($day_1_special_event_end) : ''); ?>
+                                        </time>
+                                    <?php endif; ?>
+                                    <?php if (!empty($day_1_special_event_field)): ?>
+                                        <h5>
+                                            <?php echo esc_html($day_1_special_event_field); ?>
+                                        </h5>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Special Description -->
+                            <?php if (!empty($day_1_special_event_description)): ?>
+                                <p class="text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
+                                    <?php echo nl2br(esc_html($day_1_special_event_description)); ?>
+                                </p>
+                            <?php endif; ?>
+                        </li>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </ol>
+        </div>
+
+        <!-- Day 2 Timeline-->
+        <div class="col-span-1 p-4 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
+            <h4 class="pb-5 sm:pb-6 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('day_2_date') ?></h4>
+            <ol class="relative border-s border-zinc-300"> 
+                <!-- Day 2 Keyone Address -->
+                <?php 
+                $day_2_keynote_group = get_field('day_2_keynote_address');
+
+                if ($day_2_keynote_group):
+                    $day_2_keynote_address_start = $day_2_keynote_group['day_2_keynote_address_start'];
+                    $day_2_keynote_address_end = $day_2_keynote_group['day_2_keynote_address_end'];
+                    $day_2_keynote_address_field = $day_2_keynote_group['day_2_keynote_address_field'];
+                    $day_2_keynote_speech_start = $day_2_keynote_group['day_2_keynote_speech_start'];
+                    $day_2_keynote_speech_end = $day_2_keynote_group['day_2_keynote_speech_end'];
+                    $day_2_keynote_speaker = $day_2_keynote_group['day_2_keynote_speaker'];
+                    $day_2_keynote_address_title = $day_2_keynote_group['day_2_keynote_address_title'];
+                    $day_2_keynote_discussion_start = $day_2_keynote_group['day_2_keynote_discussion_start'];
+                    $day_2_keynote_discussion_end = $day_2_keynote_group['day_2_keynote_discussion_end'];
+                    $day_2_keynote_discussion = $day_2_keynote_group['day_2_keynote_discussion'];
+
+                    if (!empty($day_2_keynote_address_start) || !empty($day_2_keynote_address_end) || !empty($day_2_keynote_address_field) || !empty($day_2_keynote_speech_start) || !empty($day_2_keynote_speech_end) || !empty($day_2_keynote_speaker) || !empty($day_2_keynote_address_title) || !empty($day_2_keynote_discussion_start) || !empty($day_2_keynote_discussion_end) || !empty($day_2_keynote_discussion)):
+                ?>
+                        <li class="ms-4">
+                            <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                            <?php if (!empty($day_2_keynote_address_start) || !empty($day_2_keynote_address_end) || !empty($day_2_keynote_address_field)): ?>
+                                <!-- Keynote Time & Field -->
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                    <?php if (!empty($day_2_keynote_address_start) || !empty($day_2_keynote_address_end)): ?>
+                                        <time>
+                                            <?php echo esc_html($day_2_keynote_address_start) . '–' . esc_html($day_2_keynote_address_end); ?>
+                                        </time>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($day_2_keynote_address_field)): ?>
+                                        <h5>
+                                            <?php echo esc_html($day_2_keynote_address_field); ?>
+                                        </h5>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if (!empty($day_2_keynote_speech_start) || !empty($day_2_keynote_speech_end) || !empty($day_2_keynote_speaker) || !empty($day_2_keynote_address_title)): ?>
+                                <!-- Keynote Speech Time, Speaker & Title -->
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                                    <?php if (!empty($day_2_keynote_speech_start) || !empty($day_2_keynote_speech_end)): ?>
+                                        <div class="flex flex-row items-center">
+                                            <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                            <time class="pl-1 font-semibold">
+                                                <?php echo esc_html($day_2_keynote_speech_start) . '–' . esc_html($day_2_keynote_speech_end); ?>
+                                            </time>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($day_2_keynote_speaker)): ?>
+                                        <h5 class="font-semibold">
+                                            <?php echo esc_html($day_2_keynote_speaker); ?>
+                                        </h5>
+                                    <?php endif; ?>
+                                    <?php if (!empty($day_2_keynote_address_title)): ?>
+                                        <p class="font-medium">
+                                            <?php echo esc_html($day_2_keynote_address_title); ?>
+                                        </p>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if (!empty($day_2_keynote_discussion_start) || !empty($day_2_keynote_discussion_end) || !empty($day_2_keynote_discussion)): ?>
+                                <!-- Keynote Discussion Time & Field -->
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
+                                    <?php if (!empty($day_2_keynote_discussion_start) || !empty($day_2_keynote_discussion_end)): ?>
+                                        <div class="flex flex-row items-center">
+                                            <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                            <time class="pl-1">
+                                                <?php echo esc_html($day_2_keynote_discussion_start) . '–' . esc_html($day_2_keynote_discussion_end); ?>
+                                            </time>
+                                        </div>
+                                    <?php endif; ?>
+                                    <h5">
+                                        <?php echo esc_html($day_2_keynote_discussion); ?>
                                     </h5>
                                 </div>
-                                <p class="pt-1 font-medium">
-                                    <?php echo esc_html(get_field('presentation_title')); ?>
-                                </p>
-                                <div class="inline-block">
-                                    <a href="#" class="pt-1 group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
-                                        <p class="pr-1">Absztrakt</p>
-                                        <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                            <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
-                                        </svg>
-                                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php else: ?>
-                        <p>Hiba a betöltéskor.</p>
+                            <?php endif; ?>
+                        </li>
                     <?php endif; ?>
+                <?php endif; ?>
 
-                    <?php if (!empty($day_2_session_3_discussion_start) || !empty($day_2_session_3_discussion_end)): ?>
-                        <div class="flex flex-row items-center">
-                            <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <time class="pl-1 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
-                                <?php if ( !empty($day_2_session_3_discussion_start) && !empty($day_2_session_3_discussion_end) ) : ?>
-                                    <?php echo esc_html($day_2_session_3_discussion_start) . '–' . esc_html($day_2_session_3_discussion_end); ?>
-                                <?php elseif (!empty($day_2_session_3_discussion_start)): ?>
-                                    <?php echo esc_html($day_2_session_3_discussion_start); ?>
+                <!-- Day 2 Break 1 -->
+                <?php 
+                $day_2_break_1_group = get_field('day_2_break_1');
+
+                if ($day_2_break_1_group):
+                    $day_2_break_1_start = $day_2_break_1_group['day_2_break_1_start'];
+                    $day_2_break_1_end = $day_2_break_1_group['day_2_break_1_end'];
+                    $day_2_break_1_field = $day_2_break_1_group['day_2_break_1_field'];
+
+                    if (!empty($day_2_break_1_start) || !empty($day_2_break_1_end) || !empty($day_2_break_1_field)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <?php if (!empty($day_2_break_1_start) || !empty($day_2_break_1_end) || !empty($day_2_break_1_field)): ?>
+                            <!-- Break Time & Field -->
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                <?php if (!empty($day_2_break_1_start) || !empty($day_2_break_1_end)): ?>
+                                    <time>
+                                        <?php echo esc_html($day_2_break_1_start) . (empty($day_2_break_1_end) ? '' : '–' . esc_html($day_2_break_1_end)); ?>
+                                    </time>
                                 <?php endif; ?>
-                            </time>
-                        </div>
+                                <?php if (!empty($day_2_break_1_field)): ?>
+                                    <h5>
+                                        <?php echo esc_html($day_2_break_1_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 2 Session 1 -->
+                <?php 
+                $day_2_session_1_group = get_field('day_2_session_1');
+
+                if ($day_2_session_1_group):
+                    $day_2_session_1_start = $day_2_session_1_group['day_2_session_1_start'];
+                    $day_2_session_1_end = $day_2_session_1_group['day_2_session_1_end'];
+                    $day_2_session_1_field = $day_2_session_1_group['day_2_session_1_field'];
+                    $day_2_session_1_chair_name = $day_2_session_1_group['day_2_session_1_chair_name'];
+                    $day_2_session_1_title = $day_2_session_1_group['day_2_session_1_title'];
+                    $day_2_session_1_speakers = $day_2_session_1_group['day_2_session_1_speakers'];
+                    $day_2_session_1_discussion_start = $day_2_session_1_group['day_2_session_1_discussion_start'];
+                    $day_2_session_1_discussion_end = $day_2_session_1_group['day_2_session_1_discussion_end'];
+                    $day_2_session_1_discussion = $day_2_session_1_group['day_2_session_1_discussion'];
+
+                    if (!empty($day_2_session_1_start) || !empty($day_2_session_1_end) || !empty($day_2_session_1_field) || !empty($day_2_session_1_chair_name) || !empty($day_2_session_1_title) || !empty($day_2_session_1_speakers) || !empty($day_2_session_1_discussion_start) || !empty($day_2_session_1_discussion_end) || !empty($day_2_session_1_discussion)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <!-- Session Time, Field, Chair & Title -->
+                        <?php if (!empty($day_2_session_1_start) || !empty($day_2_session_1_end) || !empty($day_2_session_1_field) || !empty($day_2_session_1_chair_name) || !empty($day_2_session_1_title)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 leading-relaxed">
+                                <?php if (!empty($day_2_session_1_start) || !empty($day_2_session_1_end)): ?>
+                                    <time class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_2_session_1_start) . (!empty($day_2_session_1_end) ? '–' . esc_html($day_2_session_1_end) : ''); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_1_field)): ?>
+                                    <h5 class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_2_session_1_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_1_chair_name)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                        <?php echo esc_html($day_2_session_1_chair_name); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_1_title)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
+                                        <?php echo esc_html($day_2_session_1_title); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Session Speakers -->
+                        <?php if (!empty($day_2_session_1_speakers)): ?>
+                            <?php foreach ($day_2_session_1_speakers as $post): ?>
+                                <?php setup_postdata($post); ?>
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                                    <div class="flex flex-row items-center">
+                                        <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <time class="pl-1 font-semibold">
+                                            <?php 
+                                            $presentation_start = get_field('presentation_start');
+                                            $presentation_end = get_field('presentation_end');
+                                            if (!empty($presentation_start) && !empty($presentation_end)) : ?>
+                                                <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
+                                            <?php elseif (!empty($presentation_start)): ?>
+                                                <?php echo esc_html($presentation_start); ?>
+                                            <?php endif; ?>
+                                        </time>
+                                    </div>
+                                    <div class="flex flex-row items-center">
+                                        <?php $speaker_img = get_field('speaker_img'); ?>
+                                        <?php if ($speaker_img) : ?>
+                                            <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
+                                        <?php endif; ?> 
+                                        <h5 class="pl-1 flex font-semibold">
+                                            <?php echo esc_html(get_field('speaker_name')); ?>
+                                        </h5>
+                                    </div>
+                                    <p class="font-medium">
+                                        <?php echo esc_html(get_field('presentation_title')); ?>
+                                    </p>
+                                </div>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+
+                        <!-- Session Discussion Time & Field -->
+                        <?php if (!empty($day_2_session_1_discussion_start) || !empty($day_2_session_1_discussion_end) || !empty($day_2_session_1_discussion)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
+                                <div class="flex flex-row items-center">
+                                    <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    <time class="pl-1">
+                                        <?php if (!empty($day_2_session_1_discussion_start) && !empty($day_2_session_1_discussion_end)) : ?>
+                                            <?php echo esc_html($day_2_session_1_discussion_start) . '–' . esc_html($day_2_session_1_discussion_end); ?>
+                                        <?php elseif (!empty($day_2_session_1_discussion_start)): ?>
+                                            <?php echo esc_html($day_2_session_1_discussion_start); ?>
+                                        <?php endif; ?>
+                                    </time>
+                                </div>
+                                <?php if (!empty($day_2_session_1_discussion)): ?>
+                                <h5>
+                                    <?php echo esc_html($day_2_session_1_discussion); ?>
+                                </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 2 Break 2 -->
+                <?php 
+                $day_2_break_2_group = get_field('day_2_break_2');
+
+                if ($day_2_break_2_group):
+                    $day_2_break_2_start = $day_2_break_2_group['day_2_break_2_start'];
+                    $day_2_break_2_end = $day_2_break_2_group['day_2_break_2_end'];
+                    $day_2_break_2_field = $day_2_break_2_group['day_2_break_2_field'];
+
+                    if (!empty($day_2_break_2_start) || !empty($day_2_break_2_end) || !empty($day_2_break_2_field)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <?php if (!empty($day_2_break_2_start) || !empty($day_2_break_2_end) || !empty($day_2_break_2_field)): ?>
+                            <!-- Break Time & Field -->
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                <?php if (!empty($day_2_break_2_start) || !empty($day_2_break_2_end)): ?>
+                                    <time>
+                                        <?php echo esc_html($day_2_break_2_start) . (empty($day_2_break_2_end) ? '' : '–' . esc_html($day_2_break_2_end)); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_break_2_field)): ?>
+                                    <h5>
+                                        <?php echo esc_html($day_2_break_2_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 2 Session 2 -->
+                <?php 
+                $day_2_session_2_group = get_field('day_2_session_2');
+
+                if ($day_2_session_2_group):
+                    $day_2_session_2_start = $day_2_session_2_group['day_2_session_2_start'];
+                    $day_2_session_2_end = $day_2_session_2_group['day_2_session_2_end'];
+                    $day_2_session_2_field = $day_2_session_2_group['day_2_session_2_field'];
+                    $day_2_session_2_chair_name = $day_2_session_2_group['day_2_session_2_chair_name'];
+                    $day_2_session_2_title = $day_2_session_2_group['day_2_session_2_title'];
+                    $day_2_session_2_speakers = $day_2_session_2_group['day_2_session_2_speakers'];
+                    $day_2_session_2_discussion_start = $day_2_session_2_group['day_2_session_2_discussion_start'];
+                    $day_2_session_2_discussion_end = $day_2_session_2_group['day_2_session_2_discussion_end'];
+                    $day_2_session_2_discussion = $day_2_session_2_group['day_2_session_2_discussion'];
+
+                    if (!empty($day_2_session_2_start) || !empty($day_2_session_2_end) || !empty($day_2_session_2_field) || !empty($day_2_session_2_chair_name) || !empty($day_2_session_2_title) || !empty($day_2_session_2_speakers) || !empty($day_2_session_2_discussion_start) || !empty($day_2_session_2_discussion_end) || !empty($day_2_session_2_discussion)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <!-- Session Time, Field, Chair & Title -->
+                        <?php if (!empty($day_2_session_2_start) || !empty($day_2_session_2_end) || !empty($day_2_session_2_field) || !empty($day_2_session_2_chair_name) || !empty($day_2_session_2_title)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 leading-relaxed">
+                                <?php if (!empty($day_2_session_2_start) || !empty($day_2_session_2_end)): ?>
+                                    <time class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_2_session_2_start) . (!empty($day_2_session_2_end) ? '–' . esc_html($day_2_session_2_end) : ''); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_2_field)): ?>
+                                    <h5 class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_2_session_2_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_2_chair_name)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                        <?php echo esc_html($day_2_session_2_chair_name); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_2_title)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
+                                        <?php echo esc_html($day_2_session_2_title); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Session Speakers -->
+                        <?php if (!empty($day_2_session_2_speakers)): ?>
+                            <?php foreach ($day_2_session_2_speakers as $post): ?>
+                                <?php setup_postdata($post); ?>
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                                    <div class="flex flex-row items-center">
+                                        <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <time class="pl-1 font-semibold">
+                                            <?php 
+                                            $presentation_start = get_field('presentation_start');
+                                            $presentation_end = get_field('presentation_end');
+                                            if (!empty($presentation_start) && !empty($presentation_end)) : ?>
+                                                <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
+                                            <?php elseif (!empty($presentation_start)): ?>
+                                                <?php echo esc_html($presentation_start); ?>
+                                            <?php endif; ?>
+                                        </time>
+                                    </div>
+                                    <div class="flex flex-row items-center">
+                                        <?php $speaker_img = get_field('speaker_img'); ?>
+                                        <?php if ($speaker_img) : ?>
+                                            <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
+                                        <?php endif; ?> 
+                                        <h5 class="pl-1 flex font-semibold">
+                                            <?php echo esc_html(get_field('speaker_name')); ?>
+                                        </h5>
+                                    </div>
+                                    <p class="font-medium">
+                                        <?php echo esc_html(get_field('presentation_title')); ?>
+                                    </p>
+                                </div>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+
+                        <!-- Session Discussion Time & Field -->
+                        <?php if (!empty($day_2_session_2_discussion_start) || !empty($day_2_session_2_discussion_end) || !empty($day_2_session_2_discussion)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
+                                <div class="flex flex-row items-center">
+                                    <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    <time class="pl-1">
+                                        <?php if (!empty($day_2_session_2_discussion_start) && !empty($day_2_session_2_discussion_end)) : ?>
+                                            <?php echo esc_html($day_2_session_2_discussion_start) . '–' . esc_html($day_2_session_2_discussion_end); ?>
+                                        <?php elseif (!empty($day_2_session_2_discussion_start)): ?>
+                                            <?php echo esc_html($day_2_session_2_discussion_start); ?>
+                                        <?php endif; ?>
+                                    </time>
+                                </div>
+                                <?php if (!empty($day_2_session_2_discussion)): ?>
+                                <h5>
+                                    <?php echo esc_html($day_2_session_2_discussion); ?>
+                                </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 2 Break 3 -->
+                <?php 
+                $day_2_break_3_group = get_field('day_2_break_3');
+
+                if ($day_2_break_3_group):
+                    $day_2_break_3_start = $day_2_break_3_group['day_2_break_3_start'];
+                    $day_2_break_3_end = $day_2_break_3_group['day_2_break_3_end'];
+                    $day_2_break_3_field = $day_2_break_3_group['day_2_break_3_field'];
+
+                    if (!empty($day_2_break_3_start) || !empty($day_2_break_3_end) || !empty($day_2_break_3_field)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <?php if (!empty($day_2_break_3_start) || !empty($day_2_break_3_end) || !empty($day_2_break_3_field)): ?>
+                            <!-- Break Time & Field -->
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                <?php if (!empty($day_2_break_3_start) || !empty($day_2_break_3_end)): ?>
+                                    <time>
+                                        <?php echo esc_html($day_2_break_3_start) . (empty($day_2_break_3_end) ? '' : '–' . esc_html($day_2_break_3_end)); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_break_3_field)): ?>
+                                    <h5>
+                                        <?php echo esc_html($day_2_break_3_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 2 Session 3 -->
+                <?php 
+                $day_2_session_3_group = get_field('day_2_session_3');
+
+                if ($day_2_session_3_group):
+                    $day_2_session_3_start = $day_2_session_3_group['day_2_session_3_start'];
+                    $day_2_session_3_end = $day_2_session_3_group['day_2_session_3_end'];
+                    $day_2_session_3_field = $day_2_session_3_group['day_2_session_3_field'];
+                    $day_2_session_3_chair_name = $day_2_session_3_group['day_2_session_3_chair_name'];
+                    $day_2_session_3_title = $day_2_session_3_group['day_2_session_3_title'];
+                    $day_2_session_3_speakers = $day_2_session_3_group['day_2_session_3_speakers'];
+                    $day_2_session_3_discussion_start = $day_2_session_3_group['day_2_session_3_discussion_start'];
+                    $day_2_session_3_discussion_end = $day_2_session_3_group['day_2_session_3_discussion_end'];
+                    $day_2_session_3_discussion = $day_2_session_3_group['day_2_session_3_discussion'];
+
+                    if (!empty($day_2_session_3_start) || !empty($day_2_session_3_end) || !empty($day_2_session_3_field) || !empty($day_2_session_3_chair_name) || !empty($day_2_session_3_title) || !empty($day_2_session_3_speakers) || !empty($day_2_session_3_discussion_start) || !empty($day_2_session_3_discussion_end) || !empty($day_2_session_3_discussion)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <!-- Session Time, Field, Chair & Title -->
+                        <?php if (!empty($day_2_session_3_start) || !empty($day_2_session_3_end) || !empty($day_2_session_3_field) || !empty($day_2_session_3_chair_name) || !empty($day_2_session_3_title)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 leading-relaxed">
+                                <?php if (!empty($day_2_session_3_start) || !empty($day_2_session_3_end)): ?>
+                                    <time class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_2_session_3_start) . (!empty($day_2_session_3_end) ? '–' . esc_html($day_2_session_3_end) : ''); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_3_field)): ?>
+                                    <h5 class="text-base sm:text-lg font-primary font-medium text-lightgreen">
+                                        <?php echo esc_html($day_2_session_3_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_3_chair_name)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                        <?php echo esc_html($day_2_session_3_chair_name); ?>
+                                    </h5>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_session_3_title)): ?>
+                                    <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
+                                        <?php echo esc_html($day_2_session_3_title); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Session Speakers -->
+                        <?php if (!empty($day_2_session_3_speakers)): ?>
+                            <?php foreach ($day_2_session_3_speakers as $post): ?>
+                                <?php setup_postdata($post); ?>
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                                    <div class="flex flex-row items-center">
+                                        <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <time class="pl-1 font-semibold">
+                                            <?php 
+                                            $presentation_start = get_field('presentation_start');
+                                            $presentation_end = get_field('presentation_end');
+                                            if (!empty($presentation_start) && !empty($presentation_end)) : ?>
+                                                <?php echo esc_html($presentation_start) . '–' . esc_html($presentation_end); ?>
+                                            <?php elseif (!empty($presentation_start)): ?>
+                                                <?php echo esc_html($presentation_start); ?>
+                                            <?php endif; ?>
+                                        </time>
+                                    </div>
+                                    <div class="flex flex-row items-center">
+                                        <?php $speaker_img = get_field('speaker_img'); ?>
+                                        <?php if ($speaker_img) : ?>
+                                            <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
+                                        <?php endif; ?> 
+                                        <h5 class="pl-1 flex font-semibold">
+                                            <?php echo esc_html(get_field('speaker_name')); ?>
+                                        </h5>
+                                    </div>
+                                    <p class="font-medium">
+                                        <?php echo esc_html(get_field('presentation_title')); ?>
+                                    </p>
+                                </div>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+
+                        <!-- Session Discussion Time & Field -->
+                        <?php if (!empty($day_2_session_3_discussion_start) || !empty($day_2_session_3_discussion_end) || !empty($day_2_session_3_discussion)): ?>
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed">
+                                <div class="flex flex-row items-center">
+                                    <svg class="h-4 sm:h-5 w-4 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    <time class="pl-1">
+                                        <?php if (!empty($day_2_session_3_discussion_start) && !empty($day_2_session_3_discussion_end)) : ?>
+                                            <?php echo esc_html($day_2_session_3_discussion_start) . '–' . esc_html($day_2_session_3_discussion_end); ?>
+                                        <?php elseif (!empty($day_2_session_3_discussion_start)): ?>
+                                            <?php echo esc_html($day_2_session_3_discussion_start); ?>
+                                        <?php endif; ?>
+                                    </time>
+                                </div>
+                                <?php if (!empty($day_2_session_3_discussion)): ?>
+                                <h5>
+                                    <?php echo esc_html($day_2_session_3_discussion); ?>
+                                </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 2 Break 4 -->
+                <?php 
+                $day_2_break_4_group = get_field('day_2_break_4');
+
+                if ($day_2_break_4_group):
+                    $day_2_break_4_start = $day_2_break_4_group['day_2_break_4_start'];
+                    $day_2_break_4_end = $day_2_break_4_group['day_2_break_4_end'];
+                    $day_2_break_4_field = $day_2_break_4_group['day_2_break_4_field'];
+
+                    if (!empty($day_2_break_4_start) || !empty($day_2_break_4_end) || !empty($day_2_break_4_field)):
+                ?>
+                    <li class="ms-4">
+                        <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                        <?php if (!empty($day_2_break_4_start) || !empty($day_2_break_4_end) || !empty($day_2_break_4_field)): ?>
+                            <!-- Break Time & Field -->
+                            <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                <?php if (!empty($day_2_break_4_start) || !empty($day_2_break_4_end)): ?>
+                                    <time>
+                                        <?php echo esc_html($day_2_break_4_start) . (empty($day_2_break_4_end) ? '' : '–' . esc_html($day_2_break_4_end)); ?>
+                                    </time>
+                                <?php endif; ?>
+                                <?php if (!empty($day_2_break_4_field)): ?>
+                                    <h5>
+                                        <?php echo esc_html($day_2_break_4_field); ?>
+                                    </h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </li>
+                <?php 
+                    endif;
+                endif; 
+                ?>
+
+                <!-- Day 2 Special Event -->
+                <?php 
+                $day_2_special_group = get_field('day_2_special_event');
+
+                if ($day_2_special_group):
+                    $day_2_special_event_start = $day_2_special_group['day_2_special_event_start'] ?? '';
+                    $day_2_special_event_end = $day_2_special_group['day_2_special_event_end'] ?? '';
+                    $day_2_special_event_field = $day_2_special_group['day_2_special_event_field'] ?? '';
+                    $day_2_special_event_description = $day_2_special_group['day_2_special_event_description'] ?? '';
+
+                    $has_content_day_2_special = !empty($day_2_special_event_start) || !empty($day_2_special_event_end) || !empty($day_2_special_event_field) || !empty($day_2_special_event_description);
+
+                    if ($has_content_day_2_special):
+                    ?>
+                        <li class="ms-4">
+                            <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
+
+                            <!-- Special Time & Field -->
+                            <?php if (!empty($day_2_special_event_start) || !empty($day_2_special_event_end) || !empty($day_2_special_event_field)): ?>
+                                <div class="flex flex-col gap-1 pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
+                                    <?php if (!empty($day_2_special_event_start) || !empty($day_2_special_event_end)): ?>
+                                        <time>
+                                            <?php echo esc_html($day_2_special_event_start) . (!empty($day_2_special_event_end) ? '–' . esc_html($day_2_special_event_end) : ''); ?>
+                                        </time>
+                                    <?php endif; ?>
+                                    <?php if (!empty($day_2_special_event_field)): ?>
+                                        <h5>
+                                            <?php echo esc_html($day_2_special_event_field); ?>
+                                        </h5>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Special Description -->
+                            <?php if (!empty($day_2_special_event_description)): ?>
+                                <p class="text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
+                                    <?php echo nl2br(esc_html($day_2_special_event_description)); ?>
+                                </p>
+                            <?php endif; ?>
+                        </li>
                     <?php endif; ?>
-                    <h5 class="pt-1 pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-semibold leading-relaxed">
-                        <?php if ( !empty($day_2_session_3_discussion) ) : ?>
-                        <?php echo esc_html( $day_2_session_3_discussion ); ?>
-                        <?php endif; ?>
-                    </h5>
-                </li>
-            <?php endif; ?>
-        <?php endif; ?>
-
-        <!-- Day 2 Break 4 -->
-        <?php 
-        $day_2_break_4_group = get_field('day_2_break_4');
-
-        if ($day_2_break_4_group):
-            $day_2_break_4_start = $day_2_break_4_group['day_2_break_4_start'] ?? '';
-            $day_2_break_4_end = $day_2_break_4_group['day_2_break_4_end'] ?? '';
-            $day_2_break_4_field = $day_2_break_4_group['day_2_break_4_field'] ?? '';
-
-            $has_content_day_2_break_4 = !empty($day_2_break_4_start) || !empty($day_2_break_4_end) || !empty($day_2_break_4_field);
-
-            if ($has_content_day_2_break_4):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_break_4_start) && !empty($day_2_break_4_end) ) : ?>
-                            <?php echo esc_html($day_2_break_4_start) . '–' . esc_html($day_2_break_4_end); ?>
-                        <?php elseif (!empty($day_2_break_4_start)): ?>
-                            <?php echo esc_html($day_2_break_4_start); ?>
-                        <?php endif; ?>
-                    </time>
-                    <h4 class="pb-5 sm:pb-6 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_break_4_field) ) : ?>
-                        <?php echo esc_html( $day_2_break_4_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                </li>
-            <?php endif; ?>
-        <?php endif; ?>
-
-        <!-- Day 2 Special Event -->
-        <?php 
-        $day_2_special_group = get_field('day_2_special_event');
-
-        if ($day_2_special_group):
-            $day_2_special_event_start = $day_2_special_group['day_2_special_event_start'] ?? '';
-            $day_2_special_event_end = $day_2_special_group['day_2_special_event_end'] ?? '';
-            $day_2_special_event_field = $day_2_special_group['day_2_special_event_field'] ?? '';
-            $day_2_special_event_description = $day_2_special_group['day_2_special_event_description'] ?? '';
-
-            $has_content_day_2_special = !empty($day_2_special_event_start) || !empty($day_2_special_event_end) || !empty($day_2_special_event_field) || !empty($day_2_special_event_description);
-
-            if ($has_content_day_2_special):
-            ?>
-                <li class="ms-4">
-                    <div class="absolute w-3 h-3 bg-lightgreen rounded-full mt-1.5 -start-1.5"></div>
-                    <time class="pb-1 sm:pb-3 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_special_event_start) && !empty($day_2_special_event_end) ) : ?>
-                            <?php echo esc_html($day_2_special_event_start) . '–' . esc_html($day_2_special_event_end); ?>
-                        <?php elseif (!empty($day_2_special_event_start)): ?>
-                            <?php echo esc_html($day_2_special_event_start); ?>
-                        <?php endif; ?>
-                    </time>
-                    <h4 class="pt-1 text-base sm:text-lg font-primary font-medium text-lightgreen leading-relaxed">
-                        <?php if ( !empty($day_2_special_event_field) ) : ?>
-                        <?php echo esc_html( $day_2_special_event_field ); ?>
-                        <?php endif; ?>
-                    </h4>
-                    <p class="pt-1 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
-                        <?php if ( !empty($day_2_special_event_description) ) : ?>
-                            <?php echo nl2br(esc_html($day_2_special_event_description)); ?>
-                        <?php endif; ?>
-                    </p>
-                </li>
-            <?php endif; ?>
-        <?php endif; ?>
-    </ol>
+                <?php endif; ?>
+            </ol>
+        </div>
+    </div>
 </section>
 
 </main>
