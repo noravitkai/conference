@@ -1519,6 +1519,11 @@ Template Name: Home Page
     </div>
 </section>
 
+<!-- Test Section -->
+<section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
+    <p>Test</p>
+</section>
+
 </main>
 
 <?php get_footer() ?>
