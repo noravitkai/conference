@@ -1519,9 +1519,51 @@ Template Name: Home Page
     </div>
 </section>
 
-<!-- Test Section -->
+<!-- Supporters Section -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
-    <p>Test</p>
+    <div class="mb-10 sm:mb-12 text-center">
+        <h2 class="text-sm sm:text-base font-primary font-medium text-lightgreen uppercase">
+            <?php the_field('supporters_section_heading'); ?>
+        </h2>
+        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900">
+            <?php the_field('supporters_section_subheading'); ?>
+        </h3>
+    </div>
+
+    <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 items-center gap-x-8 sm:gap-x-10 gap-y-12 sm:gap-y-14">
+        <?php
+        $args = [
+            'post_type' => 'supporter',
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+        ];
+        $supporter_query = new WP_Query($args);
+
+        if ($supporter_query->have_posts()) :
+            while ($supporter_query->have_posts()) : $supporter_query->the_post();
+        ?>
+
+            <div id="sponsorHover" class="flex flex-col items-center gap-3">
+                <a href="<?php echo esc_url(get_field('supporter_lnk')); ?>" target="_blank" class="hover:opacity-100 transition-opacity duration-300">
+                    <?php $supporter_img = get_field('supporter_img'); ?>
+                    <?php if ($supporter_img) : ?>
+                        <img src="<?php echo esc_url($supporter_img['url']); ?>" alt="<?php echo esc_attr($supporter_img['alt']); ?>" class="col-span-1 max-h-20 sm:max-h-28 w-full object-contain hover:scale-110 transition ease-in-out duration-300">
+                    <?php endif; ?>
+                </a>
+                <h4 class="text-sm sm:text-base font-primary font-medium text-lightgreen leading-relaxed text-center">
+                    <?php the_field('supporter_name'); ?>
+                </h4>
+            </div>
+
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        else :
+            echo 'Hiba a betöltéskor.';
+        endif;
+        ?>
+    </div>
 </section>
 
 </main>
@@ -1583,5 +1625,19 @@ document.addEventListener("DOMContentLoaded", function() {
         day1Content.classList.remove('hidden');
         day2Content.classList.remove('hidden');
     }
+});
+
+const sponsorHover = document.querySelectorAll("#sponsorHover a");    
+
+sponsorHover.forEach((hover) => {
+    hover.addEventListener("mouseenter", () => {
+    sponsorHover.forEach(
+        (hvr) => hvr !== hover && hvr.classList.add("opacity-40")
+    );
+    });
+
+    hover.addEventListener("mouseleave", () => {
+    sponsorHover.forEach((hvr) => hvr.classList.remove("opacity-40"));
+    });
 });
 </script>
