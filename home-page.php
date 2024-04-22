@@ -216,9 +216,21 @@ Template Name: Home Page
         <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('programme_section_subheading') ?></h3>
     </div>
 
+    <!-- Tabs for sm & md Screens-->
+    <div class="lg:hidden">
+        <ul class="mb-5 sm:mb-6 flex gap-0.5 text-sm font-secondary font-medium leading-relaxed text-center">
+            <li class="w-full">
+                <button id="tabDay1" class="inline-block w-full p-4 shadow-md ring-1 ring-neutral-900/5 rounded-l-2xl">1. nap</button>
+            </li>
+            <li class="w-full">
+                <button id="tabDay2" class="inline-block w-full p-4 shadow-md ring-1 ring-neutral-900/5 rounded-r-2xl">2. nap</button>
+            </li>
+        </ul>
+    </div>
+
     <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mb-10 sm:mb-12">
         <!-- Day 1 Timeline-->
-        <div class="col-span-1 p-4 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
+        <div id="day1Content" class="col-span-1 p-6 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
             <h4 class="pb-5 sm:pb-6 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('day_1_date') ?></h4>
             <ol class="relative border-s border-zinc-300"> 
                 <!-- Day 1 Keyone Address -->
@@ -420,6 +432,15 @@ Template Name: Home Page
                                     <p class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
+                                    <div class="inline-block">
+                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                            <p class="pr-1">Absztrakt</p>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            </svg>
+                                            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
@@ -566,6 +587,15 @@ Template Name: Home Page
                                     <p class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
+                                    <div class="inline-block">
+                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                            <p class="pr-1">Absztrakt</p>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            </svg>
+                                            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
@@ -712,6 +742,15 @@ Template Name: Home Page
                                     <p class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
+                                    <div class="inline-block">
+                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                            <p class="pr-1">Absztrakt</p>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            </svg>
+                                            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
@@ -815,7 +854,7 @@ Template Name: Home Page
 
                             <!-- Special Description -->
                             <?php if (!empty($day_1_special_event_description)): ?>
-                                <p class="text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
+                                <p class="pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
                                     <?php echo nl2br(esc_html($day_1_special_event_description)); ?>
                                 </p>
                             <?php endif; ?>
@@ -823,10 +862,19 @@ Template Name: Home Page
                     <?php endif; ?>
                 <?php endif; ?>
             </ol>
+            <a href="<?php echo esc_url(get_field('programme_btn_lnk')); ?>" target="_blank" class="mt-5 sm:mt-6 relative inline-flex items-center justify-center px-5 py-2 overflow-hidden text-sm sm:text-base font-secondary font-medium text-lightgreen border-2 border-lightgreen rounded-full shadow-sm group transition duration-300 ease-out hover:shadow-md">
+                <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-lightgreen group-hover:translate-x-0 ease">
+                    <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                    </svg>
+                </span>
+                <span class="absolute flex items-center justify-center w-full h-full text-lightgreen transition-all duration-300 transform group-hover:translate-x-full ease"><?php the_field('programme_btn_txt') ?></span>
+                <span class="relative invisible"><?php the_field('programme_btn_txt') ?></span>
+            </a>
         </div>
 
         <!-- Day 2 Timeline-->
-        <div class="col-span-1 p-4 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
+        <div id="day2Content" class="col-span-1 p-6 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
             <h4 class="pb-5 sm:pb-6 text-lg sm:text-xl font-primary font-medium text-lightgreen"><?php the_field('day_2_date') ?></h4>
             <ol class="relative border-s border-zinc-300"> 
                 <!-- Day 2 Keyone Address -->
@@ -1028,6 +1076,15 @@ Template Name: Home Page
                                     <p class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
+                                    <div class="inline-block">
+                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                            <p class="pr-1">Absztrakt</p>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            </svg>
+                                            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
@@ -1174,6 +1231,15 @@ Template Name: Home Page
                                     <p class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
+                                    <div class="inline-block">
+                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                            <p class="pr-1">Absztrakt</p>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            </svg>
+                                            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
@@ -1320,6 +1386,15 @@ Template Name: Home Page
                                     <p class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
+                                    <div class="inline-block">
+                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                            <p class="pr-1">Absztrakt</p>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            </svg>
+                                            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
@@ -1423,7 +1498,7 @@ Template Name: Home Page
 
                             <!-- Special Description -->
                             <?php if (!empty($day_2_special_event_description)): ?>
-                                <p class="text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
+                                <p class="pb-5 sm:pb-6 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed">
                                     <?php echo nl2br(esc_html($day_2_special_event_description)); ?>
                                 </p>
                             <?php endif; ?>
@@ -1431,6 +1506,15 @@ Template Name: Home Page
                     <?php endif; ?>
                 <?php endif; ?>
             </ol>
+            <a href="<?php echo esc_url(get_field('programme_btn_lnk')); ?>" target="_blank" class="mt-5 sm:mt-6 relative inline-flex items-center justify-center px-5 py-2 overflow-hidden text-sm sm:text-base font-secondary font-medium text-lightgreen border-2 border-lightgreen rounded-full shadow-sm group transition duration-300 ease-out hover:shadow-md">
+                <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-lightgreen group-hover:translate-x-0 ease">
+                    <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                    </svg>
+                </span>
+                <span class="absolute flex items-center justify-center w-full h-full text-lightgreen transition-all duration-300 transform group-hover:translate-x-full ease"><?php the_field('programme_btn_txt') ?></span>
+                <span class="relative invisible"><?php the_field('programme_btn_txt') ?></span>
+            </a>
         </div>
     </div>
 </section>
@@ -1438,3 +1522,61 @@ Template Name: Home Page
 </main>
 
 <?php get_footer() ?>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const day1Tab = document.getElementById('tabDay1');
+    const day2Tab = document.getElementById('tabDay2');
+    const day1Content = document.getElementById('day1Content');
+    const day2Content = document.getElementById('day2Content');
+
+    function selectDay1() {
+        if (window.innerWidth < 1024) {
+            day1Content.classList.remove('hidden');
+            day2Content.classList.add('hidden');
+            day1Tab.classList.add('bg-lightgreen', 'text-white');
+            day1Tab.classList.remove('bg-white', 'text-zinc-900');
+            day2Tab.classList.add('bg-white', 'text-zinc-900');
+            day2Tab.classList.remove('bg-lightgreen', 'text-white');
+        }
+    }
+
+    function selectDay2() {
+        if (window.innerWidth < 1024) {
+            day2Content.classList.remove('hidden');
+            day1Content.classList.add('hidden');
+            day2Tab.classList.add('bg-lightgreen', 'text-white');
+            day2Tab.classList.remove('bg-white', 'text-zinc-900');
+            day1Tab.classList.add('bg-white', 'text-zinc-900');
+            day1Tab.classList.remove('bg-lightgreen', 'text-white');
+        }
+    }
+
+    day1Tab.addEventListener('click', selectDay1);
+    day2Tab.addEventListener('click', selectDay2);
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 1024) {
+            day1Content.classList.remove('hidden');
+            day2Content.classList.remove('hidden');
+            day1Tab.classList.remove('bg-lightgreen', 'text-white');
+            day2Tab.classList.remove('bg-lightgreen', 'text-white');
+            day1Tab.classList.add('bg-white', 'text-zinc-900');
+            day2Tab.classList.add('bg-white', 'text-zinc-900');
+        } else {
+            if (day1Content.classList.contains('hidden')) {
+                selectDay2();
+            } else {
+                selectDay1();
+            }
+        }
+    });
+
+    if (window.innerWidth < 1024) {
+        selectDay1();
+    } else {
+        day1Content.classList.remove('hidden');
+        day2Content.classList.remove('hidden');
+    }
+});
+</script>
