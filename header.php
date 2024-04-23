@@ -51,9 +51,9 @@
     <div id="menuOverlay" class="hidden fixed inset-0 bg-zinc-900 bg-opacity-90 z-10 items-center justify-center">
         <div class="flex flex-col space-y-4 font-secondary text-center text-2xl sm:text-3xl text-neutral-50">
             <a href="<?php echo get_home_url(); ?>" class="hover:opacity-100 transition-opacity duration-300">Főoldal</a>
+            <a href="<?php echo get_permalink(get_page_by_title('Előadók')); ?>" class="hover:opacity-100 transition-opacity duration-300">Előadók</a>
             <a href="<?php echo get_permalink(get_page_by_title('Kötetek')); ?>" class="hover:opacity-100 transition-opacity duration-300">Kötetek</a>
             <a href="<?php echo get_permalink(get_page_by_title('GYIK')); ?>" class="hover:opacity-100 transition-opacity duration-300">GYIK</a>
-            <a href="<?php echo get_permalink(get_page_by_title('Hírek')); ?>" class="hover:opacity-100 transition-opacity duration-300">Hírek</a>
             <a href="<?php echo get_permalink(get_page_by_title('Galéria')); ?>" class="hover:opacity-100 transition-opacity duration-300">Galéria</a>
         </div>
     </div>
