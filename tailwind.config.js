@@ -3,6 +3,9 @@ module.exports = {
   content: ["./**/*.php"],
   theme: {
     extend: {
+      maxWidth: {
+        'none': 'none',
+      },
       colors: {
         lightgreen: "#6FAE55",
         darkgreen: "#33673C",
@@ -14,5 +17,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
