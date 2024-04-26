@@ -6,3 +6,18 @@ Author: Nóra Vitkai & Simon Jobbágy
 html {
   scroll-behavior: smooth;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.clickable-parent::after {
+  content: "";
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}

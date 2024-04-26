@@ -10,7 +10,6 @@
 <body>
 
 <header class="bg-neutral-100 inset-x-0 top-0 z-50 px-10 sm:px-24 py-4 sm:py-6 border-b border-neutral-900/5">
-
     <?php
     $args = array(
         'post_type' => 'navbar',
@@ -23,7 +22,6 @@
     if ($navbar_query->have_posts()) :
         while ($navbar_query->have_posts()) : $navbar_query->the_post();
     ?>
-
     <nav class="flex">
         <div class="flex flex-0.5 sm:flex-1 items-center justify-start">
             <a href="<?php echo esc_url(get_field('facebook_link')); ?>" class="text-lightgreen hover:text-zinc-900 hover:scale-110 ease-in-out duration-300" target="_blank">
@@ -51,6 +49,7 @@
     <div id="menuOverlay" class="hidden fixed inset-0 bg-zinc-900 bg-opacity-90 z-10 items-center justify-center">
         <div class="flex flex-col space-y-4 font-secondary text-center text-2xl sm:text-3xl text-neutral-50">
             <a href="<?php echo get_home_url(); ?>" class="hover:opacity-100 transition-opacity duration-300">Főoldal</a>
+            <a href="<?php echo get_permalink(get_page_by_title('Rólunk')); ?>" class="hover:opacity-100 transition-opacity duration-300">Rólunk</a>
             <a href="<?php echo get_permalink(get_page_by_title('Előadók')); ?>" class="hover:opacity-100 transition-opacity duration-300">Előadók</a>
             <a href="<?php echo get_permalink(get_page_by_title('Kötetek')); ?>" class="hover:opacity-100 transition-opacity duration-300">Kötetek</a>
             <a href="<?php echo get_permalink(get_page_by_title('GYIK')); ?>" class="hover:opacity-100 transition-opacity duration-300">GYIK</a>
@@ -70,6 +69,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+    const body = document.body;
     const menuToggleLarge = document.getElementById("menuToggleLarge");
     const menuToggleSmall = document.getElementById("menuToggleSmall");
     const menuOverlay = document.getElementById("menuOverlay");
@@ -78,57 +78,58 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu(menuButton) {
         const isOpen = menuOverlay.classList.toggle("hidden");
         menuOverlay.classList.toggle("flex");
+        body.classList.toggle('overflow-hidden', !isOpen); // Lock or unlock scrolling based on menu state
         menuButton.style.zIndex = isOpen ? "20" : "60";
 
         const lines = menuButton.querySelectorAll("span");
         const isSmall = menuButton === menuToggleSmall;
+        updateMenuIcon(lines, isOpen, isSmall);
+    }
+
+    function updateMenuIcon(lines, isOpen, isSmall) {
         if (!isOpen) {
-        lines[0].classList.add("rotate-45");
-        lines[0].classList.replace("bg-zinc-900", "bg-neutral-50");
-        lines[1].classList.add("-rotate-45");
-        lines[1].classList.replace("bg-lightgreen", "bg-neutral-50");
+            lines[0].classList.add("rotate-45");
+            lines[0].classList.replace("bg-zinc-900", "bg-neutral-50");
+            lines[1].classList.add("-rotate-45");
+            lines[1].classList.replace("bg-lightgreen", "bg-neutral-50");
 
-        if (isSmall) {
-            lines[0].classList.add("translate-y-1");
-            lines[1].classList.add("-translate-y-1");
-            lines[1].style.width = "2rem";
+            if (isSmall) {
+                lines[0].classList.add("translate-y-1");
+                lines[1].classList.add("-translate-y-1");
+                lines[1].style.width = "2rem";
+            } else {
+                lines[0].classList.add("translate-y-1.5");
+                lines[1].classList.add("-translate-y-1.5");
+                lines[1].style.width = "2.5rem";
+            }
         } else {
-            lines[0].classList.add("translate-y-1.5");
-            lines[1].classList.add("-translate-y-1.5");
-            lines[1].style.width = "2.5rem";
-        }
-        } else {
-        lines[0].classList.remove("rotate-45");
-        lines[0].classList.replace("bg-neutral-50", "bg-zinc-900");
-        lines[1].classList.remove("-rotate-45");
-        lines[1].classList.replace("bg-neutral-50", "bg-lightgreen");
-        lines[1].style.width = "";
+            lines[0].classList.remove("rotate-45");
+            lines[0].classList.replace("bg-neutral-50", "bg-zinc-900");
+            lines[1].classList.remove("-rotate-45");
+            lines[1].classList.replace("bg-neutral-50", "bg-lightgreen");
+            lines[1].style.width = "";
 
-        if (isSmall) {
-            lines[0].classList.remove("translate-y-1");
-            lines[1].classList.remove("-translate-y-1");
-        } else {
-            lines[0].classList.remove("translate-y-1.5");
-            lines[1].classList.remove("-translate-y-1.5");
-        }
+            if (isSmall) {
+                lines[0].classList.remove("translate-y-1");
+                lines[1].classList.remove("-translate-y-1");
+            } else {
+                lines[0].classList.remove("translate-y-1.5");
+                lines[1].classList.remove("-translate-y-1.5");
+            }
         }
     }
 
-    menuToggleLarge.addEventListener("click", () => toggleMenu(menuToggleLarge));
-    menuToggleSmall.addEventListener("click", () => toggleMenu(menuToggleSmall));
-
-    menuLinks.forEach((link) => {
+    menuLinks.forEach(link => {
         link.addEventListener("mouseenter", () => {
-        menuLinks.forEach(
-            (lnk) => lnk !== link && lnk.classList.add("opacity-40")
-        );
+            menuLinks.forEach(lnk => lnk !== link && lnk.classList.add("opacity-40"));
         });
 
         link.addEventListener("mouseleave", () => {
-        menuLinks.forEach((lnk) => lnk.classList.remove("opacity-40"));
+            menuLinks.forEach(lnk => lnk.classList.remove("opacity-40"));
         });
     });
-    });
+
+    menuToggleLarge.addEventListener("click", () => toggleMenu(menuToggleLarge));
+    menuToggleSmall.addEventListener("click", () => toggleMenu(menuToggleSmall));
+});
 </script>
-
-

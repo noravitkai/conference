@@ -29,12 +29,15 @@ Template Name: Home Page
                     </span>
                     <h1 class="pt-3 sm:pt-5 text-2xl sm:text-3xl font-primary text-lightgreen transition-all duration-300 group-hover:text-white"><?php the_field('hero_card_title') ?></h1>
                     <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white"><?php the_field('hero_card_description') ?></p>
-                    <a href="#" class="pt-3 sm:pt-5 flex flex-row items-center text-sm sm:text-base font-secondary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">
+                    <?php $hero_card_btn_lnk = get_field('hero_card_btn_lnk'); ?>
+                    <?php if ($hero_card_btn_lnk) : ?>
+                    <a href="<?php echo get_permalink($hero_card_btn_lnk); ?>" class="clickable-parent pt-3 sm:pt-5 flex flex-row items-center text-sm sm:text-base font-secondary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">
                         <p class="pr-1"><?php the_field('hero_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                         </svg>
                     </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -56,7 +59,7 @@ Template Name: Home Page
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
                     <?php $cfp_card_btn_lnk = get_field('cfp_card_btn_lnk'); ?>
                     <?php if ($cfp_card_btn_lnk) : ?>
-                    <a href="<?php echo get_permalink($cfp_card_btn_lnk); ?>" class="flex flex-row items-center transition-all duration-300 group-hover:text-white">
+                    <a href="<?php echo get_permalink($cfp_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
                         <p class="pr-1"><?php the_field('cfp_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -82,7 +85,7 @@ Template Name: Home Page
                     <p><?php the_field('programme_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
-                    <a href="#program" class="flex flex-row items-center transition-all duration-300 group-hover:text-white">
+                    <a href="#program" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
                         <p class="pr-1"><?php the_field('programme_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -109,7 +112,7 @@ Template Name: Home Page
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
                     <?php $volumes_card_btn_lnk = get_field('volumes_card_btn_lnk'); ?>
                     <?php if ($volumes_card_btn_lnk) : ?>
-                    <a href="<?php echo get_permalink($volumes_card_btn_lnk); ?>" class="flex flex-row items-center transition-all duration-300 group-hover:text-white">
+                    <a href="<?php echo get_permalink($volumes_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
                         <p class="pr-1"><?php the_field('volumes_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -130,14 +133,14 @@ Template Name: Home Page
     </div>
 
     <!-- Images -->
-    <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-10 sm:mb-12">
+    <div class="grid md:grid-cols-2 gap-4 mb-10 sm:mb-12">
         <div class="col-span-1">
             <?php $mission_section_img_1 = get_field('mission_section_img_1'); ?>
             <?php if ($mission_section_img_1) : ?>
                 <img src="<?php echo esc_url($mission_section_img_1['url']); ?>" alt="<?php echo esc_attr($mission_section_img_1['alt']); ?>" class="rounded-2xl shadow-md w-full h-64 sm:h-80 object-cover">
             <?php endif; ?>
         </div>
-        <div class="col-span-1">
+        <div class="col-span-1 hidden md:block">
             <?php $mission_section_img_2 = get_field('mission_section_img_2'); ?>
             <?php if ($mission_section_img_2) : ?>
                 <img src="<?php echo esc_url($mission_section_img_2['url']); ?>" alt="<?php echo esc_attr($mission_section_img_2['alt']); ?>" class="rounded-2xl shadow-md w-full h-64 sm:h-80 object-cover">
@@ -433,10 +436,10 @@ Template Name: Home Page
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
                                     <div class="inline-block">
-                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                        <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
-                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                                             </svg>
                                             <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
                                         </a>
@@ -588,10 +591,10 @@ Template Name: Home Page
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
                                     <div class="inline-block">
-                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                        <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
-                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                                             </svg>
                                             <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
                                         </a>
@@ -743,10 +746,10 @@ Template Name: Home Page
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
                                     <div class="inline-block">
-                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                        <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
-                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                                             </svg>
                                             <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
                                         </a>
@@ -1077,10 +1080,10 @@ Template Name: Home Page
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
                                     <div class="inline-block">
-                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                        <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
-                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                                             </svg>
                                             <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
                                         </a>
@@ -1232,10 +1235,10 @@ Template Name: Home Page
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
                                     <div class="inline-block">
-                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                        <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
-                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                                             </svg>
                                             <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
                                         </a>
@@ -1387,10 +1390,10 @@ Template Name: Home Page
                                         <?php echo esc_html(get_field('presentation_title')); ?>
                                     </p>
                                     <div class="inline-block">
-                                        <a href="#" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                                        <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-lightgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
-                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round, stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/>
+                                            <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                                             </svg>
                                             <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-lightgreen group-hover:w-full transition-all duration-300 origin-left"></span>
                                         </a>
