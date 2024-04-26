@@ -8,7 +8,7 @@ Template Name: Gallery Page
 
 <main>
 
-<!-- Gallery -->
+<!-- Gallery Section -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
         <h2 class="text-sm sm:text-base font-primary font-medium text-lightgreen uppercase"><?php the_field('gallery_section_heading') ?></h2>

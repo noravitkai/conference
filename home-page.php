@@ -58,14 +58,12 @@ Template Name: Home Page
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
                     <?php $cfp_card_btn_lnk = get_field('cfp_card_btn_lnk'); ?>
-                    <?php if ($cfp_card_btn_lnk) : ?>
-                    <a href="<?php echo get_permalink($cfp_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
+                    <a href="<?php echo esc_url($cfp_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white" target="_blank">
                         <p class="pr-1"><?php the_field('cfp_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                         </svg>
                     </a>
-                    <?php endif; ?>
                 </div>
             </div>
         </div>

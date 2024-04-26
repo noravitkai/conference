@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu(menuButton) {
         const isOpen = menuOverlay.classList.toggle("hidden");
         menuOverlay.classList.toggle("flex");
-        body.classList.toggle('overflow-hidden', !isOpen); // Lock or unlock scrolling based on menu state
+        body.classList.toggle('overflow-hidden', !isOpen);
         menuButton.style.zIndex = isOpen ? "20" : "60";
 
         const lines = menuButton.querySelectorAll("span");
