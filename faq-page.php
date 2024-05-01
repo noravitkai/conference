@@ -21,7 +21,6 @@ Template Name: FAQ Page
     $args = [
         'post_type' => 'faq',
         'posts_per_page' => -1,
-        'orderby' => 'title',
         'order' => 'ASC',
     ];
     $faq_query = new WP_Query($args);
