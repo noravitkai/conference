@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
-        'none': 'none',
+        none: "none",
       },
       colors: {
         lightgreen: "#6FAE55",
@@ -17,5 +17,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require("@tailwindcss/typography")],
 };

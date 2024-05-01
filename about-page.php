@@ -66,6 +66,108 @@ Template Name: About Page
     </div>
 </section>
 
+<!-- Process Section -->
+<section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
+    <div class="mb-10 sm:mb-12 text-center">
+        <h2 class="text-sm sm:text-base font-primary font-medium text-lightgreen uppercase"><?php the_field('process_section_heading'); ?></h2>
+        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('process_section_subheading'); ?></h3>
+    </div>
+
+    <!-- Application & Editing -->
+    <div class="mb-10 sm:mb-12 grid grid-cols-1 lg:grid-cols-4 gap-8 overflow-hidden">
+        <?php
+        $args = [
+            'post_type' => 'step',
+            'posts_per_page' => -1,
+            'order' => 'ASC',
+        ];
+        $step_query = new WP_Query($args);
+
+        if ($step_query->have_posts()) :
+            while ($step_query->have_posts()) : $step_query->the_post();
+        ?>
+
+            <div class="text-sm sm:text-base font-medium leading-relaxed">
+                <div class="flex items-center font-primary text-lightgreen">
+                    <svg class="mr-3 h-5 w-5 flex-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                    </svg>
+                    <h4><?php the_field('step_title'); ?></h4>
+                    <div class="absolute -ml-3 lg:ml-5 lg:-mr-3 h-px w-screen -translate-x-full bg-zinc-300 lg:static lg:w-auto lg:flex-auto lg:translate-x-0" aria-hidden="true"></div>
+                </div>
+                <p class="mt-3 sm:mt-5 font-secondary text-zinc-900"><?php the_field('step_description'); ?></p>
+            </div>
+
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        else :
+            echo 'Hiba a betöltéskor.';
+        endif;
+        ?>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4 align-items-stretch">
+        <!-- Card 1 -->
+        <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-lightgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <div class="relative z-5">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-lightgreen transition-all duration-300 group-hover:bg-tintgreen">
+                    <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                    </svg>
+                </span>
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">
+                    <h2><?php the_field('faq_card_title') ?></h2>
+                </div>
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                    <p><?php the_field('faq_card_description') ?></p>
+                </div>
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                    <?php $faq_page = get_field('faq_card_btn_lnk');
+                    if( $faq_page ): 
+                        $faq_page_url = get_permalink($faq_page->ID);
+                    ?>
+                        <a href="<?php echo esc_url($faq_page_url); ?>" target="_blank" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white" target="_blank">
+                            <p class="pr-1"><?php the_field('faq_card_btn_txt') ?></p>
+                            <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                            </svg>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-lightgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <div class="relative z-5">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-lightgreen transition-all duration-300 group-hover:bg-tintgreen">
+                    <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                    </svg>
+                </span>
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">
+                    <h2><?php the_field('social_card_title') ?></h2>
+                </div>
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                    <p><?php the_field('social_card_description') ?></p>
+                </div>
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-lightgreen">
+                    <?php $social_card_btn_lnk = get_field('social_card_btn_lnk'); ?>
+                    <a href="<?php echo esc_url($social_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white" target="_blank">
+                        <p class="pr-1"><?php the_field('social_card_btn_txt') ?></p>
+                        <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 </main>
 
 <?php get_footer(); ?>
