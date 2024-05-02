@@ -37,7 +37,7 @@ Template Name: Speakers Page
                     <span>
                         <?php $speaker_img = get_field('speaker_img'); ?>
                         <?php if ($speaker_img) : ?>
-                            <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full object-cover bg-lightgreen transition-all duration-300 group-hover:bg-tintgreen">
+                            <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full object-cover aspect-square bg-lightgreen transition-all duration-300 group-hover:bg-tintgreen">
                         <?php endif; ?> 
                     </span>
                     <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-lightgreen transition-all duration-300 group-hover:text-white">

@@ -74,7 +74,7 @@ Template Name: About Page
     </div>
 
     <!-- Application & Editing -->
-    <div class="mb-10 sm:mb-12 grid grid-cols-1 lg:grid-cols-4 gap-8 overflow-hidden">
+    <div class="mb-10 sm:mb-12 grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-8 overflow-hidden">
         <?php
         $args = [
             'post_type' => 'step',
@@ -93,7 +93,7 @@ Template Name: About Page
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
                     </svg>
                     <h4><?php the_field('step_title'); ?></h4>
-                    <div class="absolute -ml-3 lg:ml-5 lg:-mr-3 h-px w-screen -translate-x-full bg-zinc-300 lg:static lg:w-auto lg:flex-auto lg:translate-x-0" aria-hidden="true"></div>
+                    <div class="absolute -ml-3 lg:ml-5 h-px w-screen -translate-x-full bg-zinc-300 lg:static lg:w-auto lg:flex-auto lg:translate-x-0" aria-hidden="true"></div>
                 </div>
                 <p class="mt-3 sm:mt-5 font-secondary text-zinc-900"><?php the_field('step_description'); ?></p>
             </div>
@@ -108,7 +108,7 @@ Template Name: About Page
     </div>
 
     <!-- CTA Section -->
-    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4 align-items-stretch">
+    <div class="relative grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 align-items-stretch">
         <!-- Card 1 -->
         <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
             <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-lightgreen transition-all duration-300 group-hover:scale-[20]"></span>
@@ -140,6 +140,13 @@ Template Name: About Page
             </div>
         </div>
         <!-- Card 2 -->
+        <div class="col-span-1 hidden md:hidden lg:block">
+            <?php $process_section_cta_img = get_field('process_section_cta_img'); ?>
+            <?php if ($process_section_cta_img) : ?>
+                <img src="<?php echo esc_url($process_section_cta_img['url']); ?>" alt="<?php echo esc_attr($process_section_cta_img['alt']); ?>" class="rounded-2xl shadow-md h-full w-full object-cover">
+            <?php endif; ?>
+        </div>
+        <!-- Card 3 -->
         <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
             <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-lightgreen transition-all duration-300 group-hover:scale-[20]"></span>
             <div class="relative z-5">
@@ -165,6 +172,85 @@ Template Name: About Page
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
+    <!-- Current Team Members -->
+    <div class="mb-10 sm:mb-12 text-center">
+        <h2 class="text-sm sm:text-base font-primary font-medium text-lightgreen uppercase"><?php the_field('team_section_heading'); ?></h2>
+        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('team_section_subheading_1'); ?></h3>
+    </div>
+
+    <!-- Grid with Cards -->
+    <div class="mb-10 sm:mb-24 relative grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <?php
+        $current_members = get_field('current_members');
+        if ($current_members):
+            foreach ($current_members as $post):
+                setup_postdata($post);
+        ?>
+            <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl overflow-hidden">
+                <div class="relative z-5">
+                    <div class="flex flex-row gap-3 items-center">
+                        <?php $member_img = get_field('member_img'); ?>
+                        <?php if ($member_img): ?>
+                            <img src="<?php echo esc_url($member_img['url']); ?>" alt="<?php echo esc_attr($member_img['alt']); ?>" class="h-16 sm:h-20 w-16 sm:w-20 rounded-full object-cover">
+                        <?php endif; ?>
+                        <div class="flex flex-col font-medium text-lightgreen">
+                            <h4 class="text-lg sm:text-xl font-primary"><?php the_title(); ?></h4>
+                            <p class="text-sm sm:text-base font-secondary"><?php the_field('member_period'); ?></p>
+                        </div>
+                    </div>
+                    <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                        <p><?php the_field('member_intro'); ?></p>
+                    </div>
+                </div>
+            </div>
+        <?php
+            endforeach;
+            wp_reset_postdata();
+        endif;
+        ?>
+    </div>
+
+    <!-- Previous Team Members -->
+    <div class="mb-10 sm:mb-12 text-center">
+        <h2 class="text-sm sm:text-base font-primary font-medium text-lightgreen uppercase"><?php the_field('team_section_heading'); ?></h2>
+        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('team_section_subheading_2'); ?></h3>
+    </div>
+
+    <!-- Grid with Cards -->
+    <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <?php
+        $previous_members = get_field('previous_members');
+        if ($previous_members):
+            foreach ($previous_members as $post):
+                setup_postdata($post);
+        ?>
+            <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl overflow-hidden">
+                <div class="relative z-5">
+                    <div class="flex flex-row gap-3 items-center">
+                        <?php $member_img = get_field('member_img'); ?>
+                        <?php if ($member_img): ?>
+                            <img src="<?php echo esc_url($member_img['url']); ?>" alt="<?php echo esc_attr($member_img['alt']); ?>" class="h-16 sm:h-20 w-16 sm:w-20 rounded-full object-cover">
+                        <?php endif; ?>
+                        <div class="flex flex-col font-medium text-lightgreen">
+                            <h4 class="text-lg sm:text-xl font-primary"><?php the_title(); ?></h4>
+                            <p class="text-sm sm:text-base font-secondary"><?php the_field('member_period'); ?></p>
+                        </div>
+                    </div>
+                    <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed">
+                        <p><?php the_field('member_intro'); ?></p>
+                    </div>
+                </div>
+            </div>
+        <?php
+            endforeach;
+            wp_reset_postdata();
+        endif;
+        ?>
     </div>
 </section>
 

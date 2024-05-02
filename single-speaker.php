@@ -25,7 +25,7 @@ while (have_posts()) : the_post();
                 </div>
                 <div class="col-end-1 lg:row-span-4">
                     <?php $speaker_img = get_field('speaker_img'); if ($speaker_img) : ?>
-                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="rounded-full object-cover w-32 h-32 lg:w-72 lg:h-72 shadow-sm">
+                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="rounded-full object-cover aspect-square w-32 h-32 lg:w-72 lg:h-72 shadow-sm">
                     <?php endif; ?>
                 </div>
                 <figcaption class="lg:col-start-1 lg:row-start-3">
