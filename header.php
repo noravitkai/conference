@@ -12,15 +12,15 @@
 <header class="bg-neutral-100 inset-x-0 top-0 z-50 px-10 sm:px-24 py-4 sm:py-6 border-b border-neutral-900/5">
     <?php
     $args = array(
-        'post_type' => 'navbar',
+        'post_type' => 'header-footer',
         'posts_per_page' => -1,
         'order' => 'ASC',
     );
 
-    $navbar_query = new WP_Query($args);
+    $headerfooter_query = new WP_Query($args);
 
-    if ($navbar_query->have_posts()) :
-        while ($navbar_query->have_posts()) : $navbar_query->the_post();
+    if ($headerfooter_query->have_posts()) :
+        while ($headerfooter_query->have_posts()) : $headerfooter_query->the_post();
     ?>
     <nav class="flex">
         <div class="flex flex-0.5 sm:flex-1 items-center justify-start">

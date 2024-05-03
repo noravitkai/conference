@@ -8,7 +8,7 @@ while (have_posts()) : the_post();
 
 <!-- Bio -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 border-b border-neutral-900/5">
-    <div class="bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
+    <div class="bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl">
         <div class="p-10 lg:p-6">
             <figure class="grid grid-cols-1 items-center gap-x-6 lg:gap-x-16 gap-y-8">
                 <div class="col-span-2 lg:col-start-1 lg:row-start-2">
