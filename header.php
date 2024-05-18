@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php bloginfo("name"); ?></title>
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="https://use.typekit.net/ynq4pzk.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
     ?>
     <nav class="flex">
         <div class="flex flex-0.5 sm:flex-1 items-center justify-start">
-            <a href="<?php echo esc_url(get_field('facebook_link')); ?>" class="text-lightgreen hover:text-zinc-900 hover:scale-110 ease-in-out duration-300" target="_blank">
+            <a href="<?php echo esc_url(get_field('facebook_link')); ?>" class="text-darkgreen hover:text-zinc-900 hover:scale-110 ease-in-out duration-300" target="_blank">
                 <svg class="sm:w-10 w-8 sm:h-10 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
                 </svg>
@@ -35,13 +35,13 @@
             <button id="menuToggleLarge" class="lg:flex hidden justify-center">
                 <div class="space-y-2">
                     <span class="block h-1 w-10 origin-center bg-zinc-900 transition-transform ease-in-out"></span>
-                    <span class="block h-1 w-8 origin-center bg-lightgreen transition-transform ease-in-out"></span>
+                    <span class="block h-1 w-8 origin-center bg-darkgreen transition-transform ease-in-out"></span>
                 </div>
             </button>
             <button id="menuToggleSmall" class="flex lg:hidden justify-center">
                 <div class="space-y-1.5">
                     <span class="block h-0.5 w-8 origin-center bg-zinc-900 transition-transform ease-in-out"></span>
-                    <span class="block h-0.5 w-6 origin-center bg-lightgreen transition-transform ease-in-out"></span>
+                    <span class="block h-0.5 w-6 origin-center bg-darkgreen transition-transform ease-in-out"></span>
                 </div>
             </button>
         </div>
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
             lines[0].classList.add("rotate-45");
             lines[0].classList.replace("bg-zinc-900", "bg-neutral-50");
             lines[1].classList.add("-rotate-45");
-            lines[1].classList.replace("bg-lightgreen", "bg-neutral-50");
+            lines[1].classList.replace("bg-darkgreen", "bg-neutral-50");
 
             if (isSmall) {
                 lines[0].classList.add("translate-y-1");
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
             lines[0].classList.remove("rotate-45");
             lines[0].classList.replace("bg-neutral-50", "bg-zinc-900");
             lines[1].classList.remove("-rotate-45");
-            lines[1].classList.replace("bg-neutral-50", "bg-lightgreen");
+            lines[1].classList.replace("bg-neutral-50", "bg-darkgreen");
             lines[1].style.width = "";
 
             if (isSmall) {

@@ -7,12 +7,11 @@ module.exports = {
         none: "none",
       },
       colors: {
-        lightgreen: "#6FAE55",
-        darkgreen: "#33673C",
-        tintgreen: "#8CBE77",
+        darkgreen: "#6FAE55",
+        lightgreen: "#8CBE77",
       },
       fontFamily: {
-        primary: ["itc-avant-garde-gothic-pro", "sans-serif"],
+        primary: ["Proxima Nova", "sans-serif"],
         secondary: ["Helvetica", "Arial", "sans-serif"],
       },
     },
