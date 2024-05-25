@@ -16,4 +16,9 @@ function ad_remove_gutenberg() {
 }
 add_action('init', 'ad_remove_gutenberg');
 
+
+function theme_enqueue_scripts() {
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/scripts.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 ?>

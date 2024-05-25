@@ -70,32 +70,4 @@ Template Name: FAQ Page
 
 <?php get_footer() ?>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var faqSection = document.querySelector('main section');
-
-    faqSection.addEventListener('click', function(event) {
-        var button = event.target.closest('button');
-        if (!button) return;
-
-        var isExpanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', !isExpanded);
-
-        var icons = button.querySelectorAll('svg');
-        icons.forEach(icon => {
-            icon.classList.toggle('hidden');
-        });
-
-        var answer = button.parentNode.nextElementSibling;
-        if (answer.style.display === 'none' || answer.classList.contains('hidden')) {
-            answer.style.display = 'block';
-            answer.classList.remove('hidden');
-        } else {
-            answer.style.display = 'none';
-            answer.classList.add('hidden');
-        }
-    });
-});
-</script>
-
 

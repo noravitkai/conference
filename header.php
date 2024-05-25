@@ -24,11 +24,12 @@
     ?>
     <nav class="flex">
         <div class="flex flex-0.5 sm:flex-1 items-center justify-start">
-            <a href="<?php echo esc_url(get_field('facebook_link')); ?>" class="text-darkgreen hover:text-zinc-900 hover:scale-110 ease-in-out duration-300" target="_blank">
-                <svg class="sm:w-10 w-8 sm:h-10 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
-                </svg>
-            </a>
+            <?php $logo = get_field('logo'); ?>
+            <?php if ($logo) : ?>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="h-6 sm:h-8 w-auto">
+                </a>
+            <?php endif; ?>
         </div>
         <p class="flex flex-1 items-center justify-center font-primary font-medium text-sm sm:text-base text-center text-zinc-900"><?php the_field('conf-info-banner') ?></p>
         <div class="flex flex-0.5 sm:flex-1 items-center justify-end">
@@ -66,70 +67,3 @@
     ?>
 
 </header>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const body = document.body;
-    const menuToggleLarge = document.getElementById("menuToggleLarge");
-    const menuToggleSmall = document.getElementById("menuToggleSmall");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const menuLinks = document.querySelectorAll("#menuOverlay a");
-
-    function toggleMenu(menuButton) {
-        const isOpen = menuOverlay.classList.toggle("hidden");
-        menuOverlay.classList.toggle("flex");
-        body.classList.toggle('overflow-hidden', !isOpen);
-        menuButton.style.zIndex = isOpen ? "20" : "60";
-
-        const lines = menuButton.querySelectorAll("span");
-        const isSmall = menuButton === menuToggleSmall;
-        updateMenuIcon(lines, isOpen, isSmall);
-    }
-
-    function updateMenuIcon(lines, isOpen, isSmall) {
-        if (!isOpen) {
-            lines[0].classList.add("rotate-45");
-            lines[0].classList.replace("bg-zinc-900", "bg-neutral-50");
-            lines[1].classList.add("-rotate-45");
-            lines[1].classList.replace("bg-darkgreen", "bg-neutral-50");
-
-            if (isSmall) {
-                lines[0].classList.add("translate-y-1");
-                lines[1].classList.add("-translate-y-1");
-                lines[1].style.width = "2rem";
-            } else {
-                lines[0].classList.add("translate-y-1.5");
-                lines[1].classList.add("-translate-y-1.5");
-                lines[1].style.width = "2.5rem";
-            }
-        } else {
-            lines[0].classList.remove("rotate-45");
-            lines[0].classList.replace("bg-neutral-50", "bg-zinc-900");
-            lines[1].classList.remove("-rotate-45");
-            lines[1].classList.replace("bg-neutral-50", "bg-darkgreen");
-            lines[1].style.width = "";
-
-            if (isSmall) {
-                lines[0].classList.remove("translate-y-1");
-                lines[1].classList.remove("-translate-y-1");
-            } else {
-                lines[0].classList.remove("translate-y-1.5");
-                lines[1].classList.remove("-translate-y-1.5");
-            }
-        }
-    }
-
-    menuLinks.forEach(link => {
-        link.addEventListener("mouseenter", () => {
-            menuLinks.forEach(lnk => lnk !== link && lnk.classList.add("opacity-40"));
-        });
-
-        link.addEventListener("mouseleave", () => {
-            menuLinks.forEach(lnk => lnk.classList.remove("opacity-40"));
-        });
-    });
-
-    menuToggleLarge.addEventListener("click", () => toggleMenu(menuToggleLarge));
-    menuToggleSmall.addEventListener("click", () => toggleMenu(menuToggleSmall));
-});
-</script>

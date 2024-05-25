@@ -6,7 +6,7 @@ Template Name: About Page
 
 <?php get_header(); ?>
 
-<main>    
+<main>
 
 <!-- Vision Section -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">

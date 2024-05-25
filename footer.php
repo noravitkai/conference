@@ -49,41 +49,6 @@
     ?>
 </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    var scrollToTopButton = document.getElementById("scroll-to-top-btn");
-
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 200) {
-        scrollToTopButton.classList.remove("hidden");
-        } else {
-        scrollToTopButton.classList.add("hidden");
-        }
-    });
-
-    scrollToTopButton.addEventListener("click", function () {
-        window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-        });
-    });
-    });
-
-    const footerLinks = document.querySelectorAll("#footerLinks a");    
-
-    footerLinks.forEach((link) => {
-    link.addEventListener("mouseenter", () => {
-        footerLinks.forEach(
-        (lnk) => lnk !== link && lnk.classList.add("opacity-40")
-    );
-    });
-
-    link.addEventListener("mouseleave", () => {
-        footerLinks.forEach((lnk) => lnk.classList.remove("opacity-40"));
-    });
-});
-</script>
-
 <?php wp_footer() ?>
 </body>
 </html>

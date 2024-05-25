@@ -139,7 +139,6 @@ while (have_posts()) : the_post();
     </div>
 </section>
 
-
 <?php endwhile; ?>
 
 </main>
