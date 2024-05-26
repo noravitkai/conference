@@ -11,8 +11,8 @@ Template Name: About Page
 <!-- Vision Section -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
-        <h2 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('vision_section_heading'); ?></h2>
-        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('vision_section_subheading'); ?></h3>
+        <h1 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('vision_section_heading'); ?></h1>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('vision_section_subheading'); ?></h2>
     </div>
     <div class="flex flex-col lg:flex-row lg:items-center gap-6">
         <?php $vision_section_img = get_field('vision_section_img'); ?>
@@ -69,8 +69,8 @@ Template Name: About Page
 <!-- Process Section -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
-        <h2 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('process_section_heading'); ?></h2>
-        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('process_section_subheading'); ?></h3>
+        <h1 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('process_section_heading'); ?></h1>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('process_section_subheading'); ?></h2>
     </div>
 
     <!-- Application & Editing -->
@@ -92,7 +92,7 @@ Template Name: About Page
                     <svg class="mr-3 h-5 w-5 flex-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
                     </svg>
-                    <h4><?php the_field('step_title'); ?></h4>
+                    <h3><?php the_field('step_title'); ?></h3>
                     <div class="absolute -ml-3 lg:ml-5 h-px w-screen -translate-x-full bg-zinc-300 lg:static lg:w-auto lg:flex-auto lg:translate-x-0" aria-hidden="true"></div>
                 </div>
                 <p class="mt-3 sm:mt-5 font-secondary text-zinc-900"><?php the_field('step_description'); ?></p>
@@ -108,7 +108,7 @@ Template Name: About Page
     </div>
 
     <!-- CTA Section -->
-    <div class="relative grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 align-items-stretch">
+    <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Card 1 -->
         <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
             <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
@@ -119,7 +119,7 @@ Template Name: About Page
                     </svg>
                 </span>
                 <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
-                    <h2><?php the_field('faq_card_title') ?></h2>
+                    <h4><?php the_field('faq_card_title') ?></h4>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
                     <p><?php the_field('faq_card_description') ?></p>
@@ -129,7 +129,7 @@ Template Name: About Page
                     if( $faq_page ): 
                         $faq_page_url = get_permalink($faq_page->ID);
                     ?>
-                        <a href="<?php echo esc_url($faq_page_url); ?>" target="_blank" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white" target="_blank">
+                        <a href="<?php echo esc_url($faq_page_url); ?>" target="_blank" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
                             <p class="pr-1"><?php the_field('faq_card_btn_txt') ?></p>
                             <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -140,14 +140,34 @@ Template Name: About Page
             </div>
         </div>
         <!-- Card 2 -->
-        <div class="col-span-1 hidden md:hidden lg:block">
-            <?php $process_section_cta_img = get_field('process_section_cta_img'); ?>
-            <?php if ($process_section_cta_img) : ?>
-                <img src="<?php echo esc_url($process_section_cta_img['url']); ?>" alt="<?php echo esc_attr($process_section_cta_img['alt']); ?>" class="rounded-2xl shadow-md h-full w-full object-cover">
-            <?php endif; ?>
+        <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <div class="relative z-5">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                    <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
+                    </svg>
+                </span>
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                    <h4><?php the_field('mail_card_title') ?></h4>
+                </div>
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                    <p><?php the_field('mail_card_description') ?></p>
+                </div>
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-darkgreen">
+                    <?php $mail_card_btn_lnk = get_field('mail_card_btn_lnk'); ?>
+                    <?php $mail_card_btn_txt = get_field('mail_card_btn_txt'); ?>
+                    <a href="mailto:<?php echo esc_attr($mail_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white" target="_blank">
+                        <p class="pr-1"><?php echo esc_html($mail_card_btn_txt); ?></p>
+                        <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- Card 3 -->
-        <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
+        <div class="relative col-span-1 md:col-span-2 lg:col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
             <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
             <div class="relative z-5">
                 <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
@@ -156,7 +176,7 @@ Template Name: About Page
                     </svg>
                 </span>
                 <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
-                    <h2><?php the_field('social_card_title') ?></h2>
+                    <h4><?php the_field('social_card_title') ?></h4>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
                     <p><?php the_field('social_card_description') ?></p>
@@ -188,6 +208,10 @@ Template Name: About Page
         <?php
         $current_members = get_field('current_members');
         if ($current_members):
+            usort($current_members, function($a, $b) {
+                return strcmp(get_field('member_name', $a->ID), get_field('member_name', $b->ID));
+            });
+
             foreach ($current_members as $post):
                 setup_postdata($post);
         ?>
@@ -199,7 +223,7 @@ Template Name: About Page
                             <img src="<?php echo esc_url($member_img['url']); ?>" alt="<?php echo esc_attr($member_img['alt']); ?>" class="h-16 sm:h-20 w-16 sm:w-20 rounded-full object-cover">
                         <?php endif; ?>
                         <div class="flex flex-col font-medium text-darkgreen">
-                            <h4 class="text-lg sm:text-xl font-primary"><?php the_title(); ?></h4>
+                            <h3 class="text-lg sm:text-xl font-primary"><?php the_field('member_name'); ?></h3>
                             <p class="text-sm sm:text-base font-secondary"><?php the_field('member_period'); ?></p>
                         </div>
                     </div>
@@ -222,10 +246,14 @@ Template Name: About Page
     </div>
 
     <!-- Grid with Cards -->
-    <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="mb-10 sm:mb-24 relative grid grid-cols-1 lg:grid-cols-2 gap-4">
         <?php
         $previous_members = get_field('previous_members');
         if ($previous_members):
+            usort($previous_members, function($a, $b) {
+                return strcmp(get_field('member_name', $a->ID), get_field('member_name', $b->ID));
+            });
+
             foreach ($previous_members as $post):
                 setup_postdata($post);
         ?>
@@ -237,7 +265,7 @@ Template Name: About Page
                             <img src="<?php echo esc_url($member_img['url']); ?>" alt="<?php echo esc_attr($member_img['alt']); ?>" class="h-16 sm:h-20 w-16 sm:w-20 rounded-full object-cover">
                         <?php endif; ?>
                         <div class="flex flex-col font-medium text-darkgreen">
-                            <h4 class="text-lg sm:text-xl font-primary"><?php the_title(); ?></h4>
+                            <h3 class="text-lg sm:text-xl font-primary"><?php the_field('member_name'); ?></h3>
                             <p class="text-sm sm:text-base font-secondary"><?php the_field('member_period'); ?></p>
                         </div>
                     </div>

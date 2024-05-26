@@ -11,8 +11,8 @@ Template Name: Speakers Page
 <!-- Speakers Section -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
-        <h2 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('speakers_section_heading'); ?></h2>
-        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('speakers_section_subheading'); ?></h3>
+        <h1 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('speakers_section_heading'); ?></h1>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('speakers_section_subheading'); ?></h2>
     </div>
 
     <!-- Tab Navigation -->
@@ -68,7 +68,7 @@ Template Name: Speakers Page
                                 <?php endif; ?>
                             </span>
                             <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
-                                <h4><?php the_field('speaker_name'); ?></h4>
+                                <h3><?php the_field('speaker_name'); ?></h3>
                             </div>
                             <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white line-clamp-1">
                                 <p><?php the_field('presentation_title'); ?></p>
@@ -96,5 +96,93 @@ Template Name: Speakers Page
 </section>
 
 </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll("#yearTabs li");
+    const yearGroups = document.querySelectorAll(".year-group");
+
+    const defaultTab = tabs[0];
+    const defaultYear = defaultTab.getAttribute("data-year");
+
+    defaultTab.querySelector("a").classList.add("text-darkgreen");
+
+    yearGroups.forEach((group) => {
+        const year = group.getAttribute("data-year");
+        if (year === defaultYear) {
+        group.classList.remove("hidden");
+        group.classList.add(
+            "grid",
+            "sm:grid-cols-1",
+            "md:grid-cols-2",
+            "lg:grid-cols-3",
+            "gap-4"
+        );
+        } else {
+        group.classList.add("hidden");
+        group.classList.remove(
+            "grid",
+            "sm:grid-cols-1",
+            "md:grid-cols-2",
+            "lg:grid-cols-3",
+            "gap-4"
+        );
+        }
+    });
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+        const year = this.getAttribute("data-year");
+
+        tabs.forEach((t) => {
+            t.querySelector("a").classList.remove("text-darkgreen");
+            t.querySelector("a").classList.add("text-zinc-900");
+        });
+        this.querySelector("a").classList.add("text-darkgreen");
+        this.querySelector("a").classList.remove("text-zinc-900");
+
+        yearGroups.forEach((group) => {
+            if (group.getAttribute("data-year") === year) {
+            group.classList.remove("hidden");
+            group.classList.add(
+                "grid",
+                "sm:grid-cols-1",
+                "md:grid-cols-2",
+                "lg:grid-cols-3",
+                "gap-4"
+            );
+            } else {
+            group.classList.add("hidden");
+            group.classList.remove(
+                "grid",
+                "sm:grid-cols-1",
+                "md:grid-cols-2",
+                "lg:grid-cols-3",
+                "gap-4"
+            );
+            }
+        });
+
+        tabs.forEach((t) => {
+            if (t !== tab) {
+            t.classList.add("opacity-40");
+            }
+        });
+        });
+
+        tab.addEventListener("mouseenter", function () {
+        tabs.forEach((t) => {
+            if (t !== tab) {
+            t.classList.add("opacity-40");
+            }
+        });
+        });
+
+        tab.addEventListener("mouseleave", function () {
+        tabs.forEach((t) => t.classList.remove("opacity-40"));
+        });
+    });
+    });
+</script>
 
 <?php get_footer(); ?>

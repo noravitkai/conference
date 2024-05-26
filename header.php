@@ -65,5 +65,71 @@
         echo 'Hiba a betöltéskor.';
     endif;
     ?>
-
 </header>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const body = document.body;
+    const menuToggleLarge = document.getElementById("menuToggleLarge");
+    const menuToggleSmall = document.getElementById("menuToggleSmall");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const menuLinks = document.querySelectorAll("#menuOverlay a");
+
+    function toggleMenu(menuButton) {
+        const isOpen = menuOverlay.classList.toggle("hidden");
+        menuOverlay.classList.toggle("flex");
+        body.classList.toggle('overflow-hidden', !isOpen);
+        menuButton.style.zIndex = isOpen ? "20" : "60";
+
+        const lines = menuButton.querySelectorAll("span");
+        const isSmall = menuButton === menuToggleSmall;
+        updateMenuIcon(lines, isOpen, isSmall);
+    }
+
+    function updateMenuIcon(lines, isOpen, isSmall) {
+        if (!isOpen) {
+            lines[0].classList.add("rotate-45");
+            lines[0].classList.replace("bg-zinc-900", "bg-neutral-50");
+            lines[1].classList.add("-rotate-45");
+            lines[1].classList.replace("bg-darkgreen", "bg-neutral-50");
+
+            if (isSmall) {
+                lines[0].classList.add("translate-y-1");
+                lines[1].classList.add("-translate-y-1");
+                lines[1].style.width = "2rem";
+            } else {
+                lines[0].classList.add("translate-y-1.5");
+                lines[1].classList.add("-translate-y-1.5");
+                lines[1].style.width = "2.5rem";
+            }
+        } else {
+            lines[0].classList.remove("rotate-45");
+            lines[0].classList.replace("bg-neutral-50", "bg-zinc-900");
+            lines[1].classList.remove("-rotate-45");
+            lines[1].classList.replace("bg-neutral-50", "bg-darkgreen");
+            lines[1].style.width = "";
+
+            if (isSmall) {
+                lines[0].classList.remove("translate-y-1");
+                lines[1].classList.remove("-translate-y-1");
+            } else {
+                lines[0].classList.remove("translate-y-1.5");
+                lines[1].classList.remove("-translate-y-1.5");
+            }
+        }
+    }
+
+    menuLinks.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            menuLinks.forEach(lnk => lnk !== link && lnk.classList.add("opacity-40"));
+        });
+
+        link.addEventListener("mouseleave", () => {
+            menuLinks.forEach(lnk => lnk.classList.remove("opacity-40"));
+        });
+    });
+
+    menuToggleLarge.addEventListener("click", () => toggleMenu(menuToggleLarge));
+    menuToggleSmall.addEventListener("click", () => toggleMenu(menuToggleSmall));
+});
+</script>

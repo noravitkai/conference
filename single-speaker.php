@@ -29,7 +29,7 @@ while (have_posts()) : the_post();
                     <?php endif; ?>
                 </div>
                 <figcaption class="lg:col-start-1 lg:row-start-3 font-medium leading-relaxed text-darkgreen flex flex-col gap-4">
-                    <h4 class="text-lg sm:text-xl font-primary"><?php echo esc_html(get_field('speaker_name')); ?></h4>
+                    <h1 class="text-lg sm:text-xl font-primary"><?php echo esc_html(get_field('speaker_name')); ?></h1>
                     <date class="text-base sm:text-lg font-secondary"><?php echo esc_html(get_field('presentation_year')); ?></date>
                 </figcaption>
             </figure>
@@ -73,8 +73,8 @@ while (have_posts()) : the_post();
 <!-- Rest of Speakers -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
-        <h2 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase">Absztraktok</h2>
-        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900">Ismerd meg további előadóinkat!</h3>
+        <h1 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase">Absztraktok</h1>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900">Ismerd meg további előadóinkat!</h2>
     </div>
 
     <div class="relative grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -113,7 +113,7 @@ while (have_posts()) : the_post();
                     <?php endif; ?> 
                 </span>
                 <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
-                    <h4><?php the_field('speaker_name') ?></h4>
+                    <h3><?php the_field('speaker_name') ?></h3>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white line-clamp-1">
                     <p><?php the_field('presentation_title') ?></p>

@@ -11,8 +11,8 @@ Template Name: FAQ Page
 <!-- FAQ -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
-        <h2 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('faq_section_heading') ?></h2>
-        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('faq_section_subheading') ?></h3>
+        <h1 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('faq_section_heading') ?></h1>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('faq_section_subheading') ?></h2>
     </div>
     
     <div class="divide-y divide-gray-900/10">
@@ -35,7 +35,7 @@ Template Name: FAQ Page
                 <dt>
                     <!-- Expand/collapse question button -->
                     <button type="button" class="flex w-full items-center justify-between" aria-controls="faq-0" aria-expanded="false">
-                        <span class="text-base sm:text-lg font-primary font-medium text-darkgreen text-left leading-relaxed"><?php the_field('faq_question') ?></span>
+                        <h3 class="text-base sm:text-lg font-primary font-medium text-darkgreen text-left leading-relaxed"><?php the_field('faq_question') ?></h3>
                         <span class="ml-6 flex h-7 items-center">
                             <!-- Icon when question is collapsed -->
                             <svg class="h-6 w-6 text-darkgreen" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -67,6 +67,37 @@ Template Name: FAQ Page
 </section>
 
 </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var faqSection = document.querySelector("main section");
+
+    faqSection.addEventListener("click", function (event) {
+        var button = event.target.closest("button");
+        if (!button) return;
+
+        var isExpanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", !isExpanded);
+
+        var icons = button.querySelectorAll("svg");
+        icons.forEach((icon) => {
+        icon.classList.toggle("hidden");
+        });
+
+        var answer = button.parentNode.nextElementSibling;
+        if (
+        answer.style.display === "none" ||
+        answer.classList.contains("hidden")
+        ) {
+        answer.style.display = "block";
+        answer.classList.remove("hidden");
+        } else {
+        answer.style.display = "none";
+        answer.classList.add("hidden");
+        }
+    });
+    });
+</script>
 
 <?php get_footer() ?>
 

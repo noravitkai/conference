@@ -126,8 +126,8 @@ Template Name: Home Page
 <!-- Mission Section -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
-        <h2 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('mission_section_heading') ?></h2>
-        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('mission_section_subheading') ?></h3>
+        <h1 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('mission_section_heading') ?></h1>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('mission_section_subheading') ?></h2>
     </div>
 
     <!-- Images -->
@@ -153,7 +153,7 @@ Template Name: Home Page
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-darkgreen">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
                 </svg>
-                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_1_title') ?></h4>
+                <h3 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_1_title') ?></h3>
             </div>
             <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_1_description') ?></p>
         </div>
@@ -163,7 +163,7 @@ Template Name: Home Page
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-darkgreen">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
                 </svg>
-                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_2_title') ?></h4>
+                <h3 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_2_title') ?></h3>
             </div>
             <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_2_description') ?></p>
         </div>
@@ -173,7 +173,7 @@ Template Name: Home Page
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-darkgreen">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
                 </svg>
-                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_3_title') ?></h4>
+                <h3 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_3_title') ?></h3>
             </div>
             <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_3_description') ?></p>
         </div>
@@ -183,7 +183,7 @@ Template Name: Home Page
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-darkgreen">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
                     </svg>
-                    <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_4_title') ?></h4>
+                    <h3 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_4_title') ?></h3>
                 </div>
             <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_4_description') ?></p>
         </div>
@@ -193,7 +193,7 @@ Template Name: Home Page
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-darkgreen">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
                 </svg>
-                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_5_title') ?></h4>
+                <h3 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_5_title') ?></h3>
             </div>
             <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_5_description') ?></p>
         </div>
@@ -203,7 +203,7 @@ Template Name: Home Page
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-darkgreen">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                 </svg>
-                <h4 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_6_title') ?></h4>
+                <h3 class="ml-4 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('core_value_6_title') ?></h3>
             </div>
             <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-zinc-900 leading-relaxed"><?php the_field('core_value_6_description') ?></p>
         </div>
@@ -213,8 +213,8 @@ Template Name: Home Page
 <!-- Programme Section -->
 <section id="program" class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
-        <h2 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('programme_section_heading') ?></h2>
-        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('programme_section_subheading') ?></h3>
+        <h1 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('programme_section_heading') ?></h1>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('programme_section_subheading') ?></h2>
     </div>
 
     <!-- Tabs for sm & md Screens-->
@@ -232,7 +232,7 @@ Template Name: Home Page
     <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mb-10 sm:mb-12">
         <!-- Day 1 Timeline-->
         <div id="day1Content" class="col-span-1 p-6 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
-            <h4 class="pb-5 sm:pb-6 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('day_1_date') ?></h4>
+            <h3 class="pb-5 sm:pb-6 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('day_1_date') ?></h3>
             <ol class="relative border-s border-zinc-300"> 
                 <!-- Day 1 Keyone Address -->
                 <?php 
@@ -265,9 +265,9 @@ Template Name: Home Page
                                     <?php endif; ?>
 
                                     <?php if (!empty($day_1_keynote_address_field)): ?>
-                                        <h5>
+                                        <h4>
                                             <?php echo esc_html($day_1_keynote_address_field); ?>
-                                        </h5>
+                                        </h4>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
@@ -286,14 +286,14 @@ Template Name: Home Page
                                         </div>
                                     <?php endif; ?>
                                     <?php if (!empty($day_1_keynote_speaker)): ?>
-                                        <h5 class="font-semibold">
+                                        <p class="font-semibold">
                                             <?php echo esc_html($day_1_keynote_speaker); ?>
-                                        </h5>
+                                        </p>
                                     <?php endif; ?>
                                     <?php if (!empty($day_1_keynote_address_title)): ?>
-                                        <p class="font-medium">
+                                        <h5 class="font-medium">
                                             <?php echo esc_html($day_1_keynote_address_title); ?>
-                                        </p>
+                                        </h5>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
@@ -311,9 +311,9 @@ Template Name: Home Page
                                             </time>
                                         </div>
                                     <?php endif; ?>
-                                    <h5">
+                                    <h4>
                                         <?php echo esc_html($day_1_keynote_discussion); ?>
-                                    </h5>
+                                    </h4>
                                 </div>
                             <?php endif; ?>
                         </li>
@@ -343,9 +343,9 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_break_1_field)): ?>
-                                    <h5>
+                                    <h4>
                                         <?php echo esc_html($day_1_break_1_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -384,14 +384,14 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_1_field)): ?>
-                                    <h5 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
+                                    <h4 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
                                         <?php echo esc_html($day_1_session_1_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_1_chair_name)): ?>
-                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                    <p class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
                                         <?php echo esc_html($day_1_session_1_chair_name); ?>
-                                    </h5>
+                                    </p>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_1_title)): ?>
                                     <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
@@ -426,13 +426,13 @@ Template Name: Home Page
                                         <?php if ($speaker_img) : ?>
                                             <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
                                         <?php endif; ?> 
-                                        <h5 class="pl-1 flex font-semibold">
+                                        <p class="pl-1 flex font-semibold">
                                             <?php echo esc_html(get_field('speaker_name')); ?>
-                                        </h5>
+                                        </p>
                                     </div>
-                                    <p class="font-medium">
+                                    <h5 class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
-                                    </p>
+                                    </h5>
                                     <div class="inline-block">
                                         <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-darkgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
@@ -463,9 +463,9 @@ Template Name: Home Page
                                     </time>
                                 </div>
                                 <?php if (!empty($day_1_session_1_discussion)): ?>
-                                <h5>
+                                <h4>
                                     <?php echo esc_html($day_1_session_1_discussion); ?>
-                                </h5>
+                                </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -498,9 +498,9 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_break_2_field)): ?>
-                                    <h5>
+                                    <h4>
                                         <?php echo esc_html($day_1_break_2_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -539,14 +539,14 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_2_field)): ?>
-                                    <h5 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
+                                    <h4 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
                                         <?php echo esc_html($day_1_session_2_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_2_chair_name)): ?>
-                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                    <p class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
                                         <?php echo esc_html($day_1_session_2_chair_name); ?>
-                                    </h5>
+                                    </p>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_2_title)): ?>
                                     <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
@@ -581,13 +581,13 @@ Template Name: Home Page
                                         <?php if ($speaker_img) : ?>
                                             <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
                                         <?php endif; ?> 
-                                        <h5 class="pl-1 flex font-semibold">
+                                        <p class="pl-1 flex font-semibold">
                                             <?php echo esc_html(get_field('speaker_name')); ?>
-                                        </h5>
+                                        </p>
                                     </div>
-                                    <p class="font-medium">
+                                    <h5 class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
-                                    </p>
+                                    </h5>
                                     <div class="inline-block">
                                         <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-darkgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
@@ -618,9 +618,9 @@ Template Name: Home Page
                                     </time>
                                 </div>
                                 <?php if (!empty($day_1_session_2_discussion)): ?>
-                                <h5>
+                                <h4>
                                     <?php echo esc_html($day_1_session_2_discussion); ?>
-                                </h5>
+                                </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -653,9 +653,9 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_break_3_field)): ?>
-                                    <h5>
+                                    <h4>
                                         <?php echo esc_html($day_1_break_3_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -694,14 +694,14 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_3_field)): ?>
-                                    <h5 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
+                                    <h4 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
                                         <?php echo esc_html($day_1_session_3_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_3_chair_name)): ?>
-                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                    <p class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
                                         <?php echo esc_html($day_1_session_3_chair_name); ?>
-                                    </h5>
+                                    </p>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_session_3_title)): ?>
                                     <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
@@ -736,13 +736,13 @@ Template Name: Home Page
                                         <?php if ($speaker_img) : ?>
                                             <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
                                         <?php endif; ?> 
-                                        <h5 class="pl-1 flex font-semibold">
+                                        <p class="pl-1 flex font-semibold">
                                             <?php echo esc_html(get_field('speaker_name')); ?>
-                                        </h5>
+                                        </p>
                                     </div>
-                                    <p class="font-medium">
+                                    <h5 class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
-                                    </p>
+                                    </h5>
                                     <div class="inline-block">
                                         <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-darkgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
@@ -773,9 +773,9 @@ Template Name: Home Page
                                     </time>
                                 </div>
                                 <?php if (!empty($day_1_session_3_discussion)): ?>
-                                <h5>
+                                <h4>
                                     <?php echo esc_html($day_1_session_3_discussion); ?>
-                                </h5>
+                                </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -808,9 +808,9 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_1_break_4_field)): ?>
-                                    <h5>
+                                    <h4>
                                         <?php echo esc_html($day_1_break_4_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -846,9 +846,9 @@ Template Name: Home Page
                                         </time>
                                     <?php endif; ?>
                                     <?php if (!empty($day_1_special_event_field)): ?>
-                                        <h5>
+                                        <h4>
                                             <?php echo esc_html($day_1_special_event_field); ?>
-                                        </h5>
+                                        </h4>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
@@ -876,7 +876,7 @@ Template Name: Home Page
 
         <!-- Day 2 Timeline-->
         <div id="day2Content" class="col-span-1 p-6 bg-white shadow-md ring-1 ring-neutral-900/5 rounded-2xl hover:shadow-lg">
-            <h4 class="pb-5 sm:pb-6 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('day_2_date') ?></h4>
+            <h3 class="pb-5 sm:pb-6 text-lg sm:text-xl font-primary font-medium text-darkgreen"><?php the_field('day_2_date') ?></h3>
             <ol class="relative border-s border-zinc-300"> 
                 <!-- Day 2 Keyone Address -->
                 <?php 
@@ -909,9 +909,9 @@ Template Name: Home Page
                                     <?php endif; ?>
 
                                     <?php if (!empty($day_2_keynote_address_field)): ?>
-                                        <h5>
+                                        <h4>
                                             <?php echo esc_html($day_2_keynote_address_field); ?>
-                                        </h5>
+                                        </h4>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
@@ -930,14 +930,14 @@ Template Name: Home Page
                                         </div>
                                     <?php endif; ?>
                                     <?php if (!empty($day_2_keynote_speaker)): ?>
-                                        <h5 class="font-semibold">
+                                        <p class="font-semibold">
                                             <?php echo esc_html($day_2_keynote_speaker); ?>
-                                        </h5>
+                                        </p>
                                     <?php endif; ?>
                                     <?php if (!empty($day_2_keynote_address_title)): ?>
-                                        <p class="font-medium">
+                                        <h5 class="font-medium">
                                             <?php echo esc_html($day_2_keynote_address_title); ?>
-                                        </p>
+                                        </h5>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
@@ -955,9 +955,9 @@ Template Name: Home Page
                                             </time>
                                         </div>
                                     <?php endif; ?>
-                                    <h5">
+                                    <h4>
                                         <?php echo esc_html($day_2_keynote_discussion); ?>
-                                    </h5>
+                                    </h4>
                                 </div>
                             <?php endif; ?>
                         </li>
@@ -987,9 +987,9 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_break_1_field)): ?>
-                                    <h5>
+                                    <h4>
                                         <?php echo esc_html($day_2_break_1_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -1028,14 +1028,14 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_1_field)): ?>
-                                    <h5 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
+                                    <h4 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
                                         <?php echo esc_html($day_2_session_1_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_1_chair_name)): ?>
-                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                    <p class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
                                         <?php echo esc_html($day_2_session_1_chair_name); ?>
-                                    </h5>
+                                    </p>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_1_title)): ?>
                                     <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
@@ -1070,13 +1070,13 @@ Template Name: Home Page
                                         <?php if ($speaker_img) : ?>
                                             <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
                                         <?php endif; ?> 
-                                        <h5 class="pl-1 flex font-semibold">
+                                        <p class="pl-1 flex font-semibold">
                                             <?php echo esc_html(get_field('speaker_name')); ?>
-                                        </h5>
+                                        </p>
                                     </div>
-                                    <p class="font-medium">
+                                    <h5 class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
-                                    </p>
+                                    </h5>
                                     <div class="inline-block">
                                         <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-darkgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
@@ -1107,9 +1107,9 @@ Template Name: Home Page
                                     </time>
                                 </div>
                                 <?php if (!empty($day_2_session_1_discussion)): ?>
-                                <h5>
+                                <h4>
                                     <?php echo esc_html($day_2_session_1_discussion); ?>
-                                </h5>
+                                </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -1142,9 +1142,9 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_break_2_field)): ?>
-                                    <h5>
+                                    <h4>
                                         <?php echo esc_html($day_2_break_2_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -1183,14 +1183,14 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_2_field)): ?>
-                                    <h5 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
+                                    <h4 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
                                         <?php echo esc_html($day_2_session_2_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_2_chair_name)): ?>
-                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                    <p class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
                                         <?php echo esc_html($day_2_session_2_chair_name); ?>
-                                    </h5>
+                                    </p>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_2_title)): ?>
                                     <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
@@ -1225,13 +1225,13 @@ Template Name: Home Page
                                         <?php if ($speaker_img) : ?>
                                             <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
                                         <?php endif; ?> 
-                                        <h5 class="pl-1 flex font-semibold">
+                                        <p class="pl-1 flex font-semibold">
                                             <?php echo esc_html(get_field('speaker_name')); ?>
-                                        </h5>
+                                        </p>
                                     </div>
-                                    <p class="font-medium">
+                                    <h5 class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
-                                    </p>
+                                    </h5>
                                     <div class="inline-block">
                                         <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-darkgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
@@ -1262,9 +1262,9 @@ Template Name: Home Page
                                     </time>
                                 </div>
                                 <?php if (!empty($day_2_session_2_discussion)): ?>
-                                <h5>
+                                <h4>
                                     <?php echo esc_html($day_2_session_2_discussion); ?>
-                                </h5>
+                                </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -1297,9 +1297,9 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_break_3_field)): ?>
-                                    <h5>
+                                    <h4>
                                         <?php echo esc_html($day_2_break_3_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -1338,14 +1338,14 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_3_field)): ?>
-                                    <h5 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
+                                    <h4 class="text-base sm:text-lg font-primary font-medium text-darkgreen">
                                         <?php echo esc_html($day_2_session_3_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_3_chair_name)): ?>
-                                    <h5 class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
+                                    <p class="text-sm sm:text-base font-secondary font-semibold text-zinc-900">
                                         <?php echo esc_html($day_2_session_3_chair_name); ?>
-                                    </h5>
+                                    </p>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_session_3_title)): ?>
                                     <h5 class="text-sm sm:text-base font-secondary font-medium text-zinc-900">
@@ -1380,13 +1380,13 @@ Template Name: Home Page
                                         <?php if ($speaker_img) : ?>
                                             <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="size-4 sm:size-5 object-cover rounded-full">
                                         <?php endif; ?> 
-                                        <h5 class="pl-1 flex font-semibold">
+                                        <p class="pl-1 flex font-semibold">
                                             <?php echo esc_html(get_field('speaker_name')); ?>
-                                        </h5>
+                                        </p>
                                     </div>
-                                    <p class="font-medium">
+                                    <h5 class="font-medium">
                                         <?php echo esc_html(get_field('presentation_title')); ?>
-                                    </p>
+                                    </h5>
                                     <div class="inline-block">
                                         <a href="<?php the_permalink() ?>" class="group relative inline-flex items-center text-sm sm:text-base font-secondary font-medium text-darkgreen" target="_blank">
                                             <p class="pr-1">Absztrakt</p>
@@ -1417,9 +1417,9 @@ Template Name: Home Page
                                     </time>
                                 </div>
                                 <?php if (!empty($day_2_session_3_discussion)): ?>
-                                <h5>
+                                <h4>
                                     <?php echo esc_html($day_2_session_3_discussion); ?>
-                                </h5>
+                                </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -1452,9 +1452,9 @@ Template Name: Home Page
                                     </time>
                                 <?php endif; ?>
                                 <?php if (!empty($day_2_break_4_field)): ?>
-                                    <h5>
+                                    <h4>
                                         <?php echo esc_html($day_2_break_4_field); ?>
-                                    </h5>
+                                    </h4>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -1490,9 +1490,9 @@ Template Name: Home Page
                                         </time>
                                     <?php endif; ?>
                                     <?php if (!empty($day_2_special_event_field)): ?>
-                                        <h5>
+                                        <h4>
                                             <?php echo esc_html($day_2_special_event_field); ?>
-                                        </h5>
+                                        </h4>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
@@ -1523,12 +1523,8 @@ Template Name: Home Page
 <!-- Supporters Section -->
 <section class="px-10 sm:px-24 py-10 sm:py-24 bg-neutral-100 border-b border-neutral-900/5">
     <div class="mb-10 sm:mb-12 text-center">
-        <h2 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase">
-            <?php the_field('supporters_section_heading'); ?>
-        </h2>
-        <h3 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900">
-            <?php the_field('supporters_section_subheading'); ?>
-        </h3>
+        <h1 class="text-sm sm:text-base font-primary font-medium text-darkgreen uppercase"><?php the_field('supporters_section_heading'); ?></h1>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-secondary font-bold text-zinc-900"><?php the_field('supporters_section_subheading'); ?></h2>
     </div>
 
     <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 items-center gap-x-8 sm:gap-x-10 gap-y-12 sm:gap-y-14">
@@ -1552,9 +1548,9 @@ Template Name: Home Page
                         <img src="<?php echo esc_url($supporter_img['url']); ?>" alt="<?php echo esc_attr($supporter_img['alt']); ?>" class="col-span-1 max-h-20 sm:max-h-28 w-full object-contain hover:scale-110 transition ease-in-out duration-300">
                     <?php endif; ?>
                 </a>
-                <h4 class="text-sm sm:text-base font-primary font-medium text-darkgreen leading-relaxed text-center">
+                <h3 class="text-sm sm:text-base font-primary font-medium text-darkgreen leading-relaxed text-center">
                     <?php the_field('supporter_name'); ?>
-                </h4>
+                </h3>
             </div>
 
         <?php
@@ -1567,5 +1563,79 @@ Template Name: Home Page
     </div>
 </section>
 </main>
+
+<?php get_footer() ?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const day1Tab = document.getElementById("tabDay1");
+    const day2Tab = document.getElementById("tabDay2");
+    const day1Content = document.getElementById("day1Content");
+    const day2Content = document.getElementById("day2Content");
+
+    function selectDay1() {
+        if (window.innerWidth < 1024) {
+        day1Content.classList.remove("hidden");
+        day2Content.classList.add("hidden");
+        day1Tab.classList.add("bg-darkgreen", "text-white");
+        day1Tab.classList.remove("bg-white", "text-zinc-900");
+        day2Tab.classList.add("bg-white", "text-zinc-900");
+        day2Tab.classList.remove("bg-darkgreen", "text-white");
+        }
+    }
+
+    function selectDay2() {
+        if (window.innerWidth < 1024) {
+        day2Content.classList.remove("hidden");
+        day1Content.classList.add("hidden");
+        day2Tab.classList.add("bg-darkgreen", "text-white");
+        day2Tab.classList.remove("bg-white", "text-zinc-900");
+        day1Tab.classList.add("bg-white", "text-zinc-900");
+        day1Tab.classList.remove("bg-darkgreen", "text-white");
+        }
+    }
+
+    day1Tab.addEventListener("click", selectDay1);
+    day2Tab.addEventListener("click", selectDay2);
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth >= 1024) {
+        day1Content.classList.remove("hidden");
+        day2Content.classList.remove("hidden");
+        day1Tab.classList.remove("bg-darkgreen", "text-white");
+        day2Tab.classList.remove("bg-darkgreen", "text-white");
+        day1Tab.classList.add("bg-white", "text-zinc-900");
+        day2Tab.classList.add("bg-white", "text-zinc-900");
+        } else {
+        if (day1Content.classList.contains("hidden")) {
+            selectDay2();
+        } else {
+            selectDay1();
+        }
+        }
+    });
+
+    if (window.innerWidth < 1024) {
+        selectDay1();
+    } else {
+        day1Content.classList.remove("hidden");
+        day2Content.classList.remove("hidden");
+    }
+    });
+
+    const sponsorHover = document.querySelectorAll("#sponsorHover a");
+
+    sponsorHover.forEach((hover) => {
+    hover.addEventListener("mouseenter", () => {
+        sponsorHover.forEach(
+        (hvr) => hvr !== hover && hvr.classList.add("opacity-40")
+        );
+    });
+
+    hover.addEventListener("mouseleave", () => {
+        sponsorHover.forEach((hvr) => hvr.classList.remove("opacity-40"));
+    });
+    });
+</script>
 
 <?php get_footer() ?>
