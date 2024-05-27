@@ -111,17 +111,17 @@ Template Name: About Page
     <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Card 1 -->
         <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
-            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:scale-[20]"></span>
             <div class="relative z-5">
-                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:bg-lightgreen">
                     <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
                     </svg>
                 </span>
-                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 lg:group-hover:text-white">
                     <h4><?php the_field('faq_card_title') ?></h4>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 lg:group-hover:text-white">
                     <p><?php the_field('faq_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-darkgreen">
@@ -129,7 +129,7 @@ Template Name: About Page
                     if( $faq_page ): 
                         $faq_page_url = get_permalink($faq_page->ID);
                     ?>
-                        <a href="<?php echo esc_url($faq_page_url); ?>" target="_blank" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
+                        <a href="<?php echo esc_url($faq_page_url); ?>" target="_blank" class="clickable-parent flex flex-row items-center transition-all duration-300 lg:group-hover:text-white">
                             <p class="pr-1"><?php the_field('faq_card_btn_txt') ?></p>
                             <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -141,23 +141,23 @@ Template Name: About Page
         </div>
         <!-- Card 2 -->
         <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
-            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:scale-[20]"></span>
             <div class="relative z-5">
-                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:bg-lightgreen">
                     <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
                     </svg>
                 </span>
-                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 lg:group-hover:text-white">
                     <h4><?php the_field('mail_card_title') ?></h4>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 lg:group-hover:text-white">
                     <p><?php the_field('mail_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-darkgreen">
                     <?php $mail_card_btn_lnk = get_field('mail_card_btn_lnk'); ?>
                     <?php $mail_card_btn_txt = get_field('mail_card_btn_txt'); ?>
-                    <a href="mailto:<?php echo esc_attr($mail_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white" target="_blank">
+                    <a href="mailto:<?php echo esc_attr($mail_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 lg:group-hover:text-white" target="_blank">
                         <p class="pr-1"><?php echo esc_html($mail_card_btn_txt); ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -168,22 +168,22 @@ Template Name: About Page
         </div>
         <!-- Card 3 -->
         <div class="relative col-span-1 md:col-span-2 lg:col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
-            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:scale-[20]"></span>
             <div class="relative z-5">
-                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:bg-lightgreen">
                     <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                     </svg>
                 </span>
-                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 lg:group-hover:text-white">
                     <h4><?php the_field('social_card_title') ?></h4>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 lg:group-hover:text-white">
                     <p><?php the_field('social_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-darkgreen">
                     <?php $social_card_btn_lnk = get_field('social_card_btn_lnk'); ?>
-                    <a href="<?php echo esc_url($social_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white" target="_blank">
+                    <a href="<?php echo esc_url($social_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 lg:group-hover:text-white" target="_blank">
                         <p class="pr-1"><?php the_field('social_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>

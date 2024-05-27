@@ -20,18 +20,18 @@ Template Name: Home Page
                 <?php endif; ?> 
             </div>
             <div class="relative flex flex-col w-2/3 justify-center p-4 group cursor-pointer overflow-hidden transition-all duration-300">
-                <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[25]"></span>
+                <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:scale-[25]"></span>
                 <div class="relative z-5">
-                    <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                    <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:bg-lightgreen">
                         <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
                         </svg>
                     </span>
-                    <h1 class="pt-3 sm:pt-5 text-2xl sm:text-3xl font-primary text-darkgreen transition-all duration-300 group-hover:text-white"><?php the_field('hero_card_title') ?></h1>
-                    <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white"><?php the_field('hero_card_description') ?></p>
+                    <h1 class="pt-3 sm:pt-5 text-2xl sm:text-3xl font-primary text-darkgreen transition-all duration-300 lg:group-hover:text-white"><?php the_field('hero_card_title') ?></h1>
+                    <p class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 lg:group-hover:text-white"><?php the_field('hero_card_description') ?></p>
                     <?php $hero_card_btn_lnk = get_field('hero_card_btn_lnk'); ?>
                     <?php if ($hero_card_btn_lnk) : ?>
-                    <a href="<?php echo get_permalink($hero_card_btn_lnk); ?>" class="clickable-parent pt-3 sm:pt-5 flex flex-row items-center text-sm sm:text-base font-secondary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                    <a href="<?php echo get_permalink($hero_card_btn_lnk); ?>" class="clickable-parent pt-3 sm:pt-5 flex flex-row items-center text-sm sm:text-base font-secondary font-medium text-darkgreen transition-all duration-300 lg:group-hover:text-white">
                         <p class="pr-1"><?php the_field('hero_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -43,22 +43,22 @@ Template Name: Home Page
         </div>
         <!-- Card 2 -->
         <div class="relative col-span-1 md:col-span-1 lg:col-span-2 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
-            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:scale-[20]"></span>
             <div class="relative z-5">
-                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:bg-lightgreen">
                     <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
                     </svg>
                 </span>
-                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 lg:group-hover:text-white">
                     <h2><?php the_field('cfp_card_title') ?></h2>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 lg:group-hover:text-white">
                     <p><?php the_field('cfp_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-darkgreen">
                     <?php $cfp_card_btn_lnk = get_field('cfp_card_btn_lnk'); ?>
-                    <a href="<?php echo esc_url($cfp_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white" target="_blank">
+                    <a href="<?php echo esc_url($cfp_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 lg:group-hover:text-white" target="_blank">
                         <p class="pr-1"><?php the_field('cfp_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -69,21 +69,21 @@ Template Name: Home Page
         </div>
         <!-- Card 3 -->
         <div class="relative col-span-1 md:col-span-1 lg:col-span-2 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
-            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:scale-[20]"></span>
             <div class="relative z-5">
-                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:bg-lightgreen">
                     <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 4h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3m0 3h6m-6 5h6m-6 4h6M10 3v4h4V3h-4Z"/>
                     </svg>
                 </span>
-                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 lg:group-hover:text-white">
                     <h2><?php the_field('programme_card_title') ?></h2>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 lg:group-hover:text-white">
                     <p><?php the_field('programme_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-darkgreen">
-                    <a href="#program" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
+                    <a href="#program" class="clickable-parent flex flex-row items-center transition-all duration-300 lg:group-hover:text-white">
                         <p class="pr-1"><?php the_field('programme_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -94,23 +94,23 @@ Template Name: Home Page
         </div>
         <!-- Card 4 -->
         <div class="relative col-span-1 md:col-span-2 lg:col-span-2 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
-            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:scale-[20]"></span>
             <div class="relative z-5">
-                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                <span class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:bg-lightgreen">
                     <svg class="h-8 sm:h-10 w-8 sm:w-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                     </svg>
                 </span>
-                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 lg:group-hover:text-white">
                     <h2><?php the_field('volumes_card_title') ?></h2>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary text-zinc-900 leading-relaxed transition-all duration-300 lg:group-hover:text-white">
                     <p><?php the_field('volumes_card_description') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-darkgreen">
                     <?php $volumes_card_btn_lnk = get_field('volumes_card_btn_lnk'); ?>
                     <?php if ($volumes_card_btn_lnk) : ?>
-                    <a href="<?php echo get_permalink($volumes_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
+                    <a href="<?php echo get_permalink($volumes_card_btn_lnk); ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 lg:group-hover:text-white">
                         <p class="pr-1"><?php the_field('volumes_card_btn_txt') ?></p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
@@ -1623,19 +1623,60 @@ Template Name: Home Page
     }
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+    var scrollToTopButton = document.getElementById("scroll-to-top-btn");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.classList.remove("hidden");
+        } else {
+            scrollToTopButton.classList.add("hidden");
+        }
+    });
+
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+
+    const footerLinks = document.querySelectorAll("#footerLinks a");
+
+    footerLinks.forEach((link) => {
+        link.addEventListener("mouseenter", () => {
+            footerLinks.forEach(
+                (lnk) => lnk !== link && lnk.classList.add("opacity-40")
+            );
+        });
+
+        link.addEventListener("mouseleave", () => {
+            footerLinks.forEach((lnk) => lnk.classList.remove("opacity-40"));
+        });
+
+        link.addEventListener("click", () => {
+            footerLinks.forEach((lnk) => lnk.classList.remove("opacity-40"));
+        });
+    });
+
     const sponsorHover = document.querySelectorAll("#sponsorHover a");
 
     sponsorHover.forEach((hover) => {
-    hover.addEventListener("mouseenter", () => {
-        sponsorHover.forEach(
-        (hvr) => hvr !== hover && hvr.classList.add("opacity-40")
-        );
-    });
+        hover.addEventListener("mouseenter", () => {
+            sponsorHover.forEach(
+                (hvr) => hvr !== hover && hvr.classList.add("opacity-40")
+            );
+        });
 
-    hover.addEventListener("mouseleave", () => {
-        sponsorHover.forEach((hvr) => hvr.classList.remove("opacity-40"));
+        hover.addEventListener("mouseleave", () => {
+            sponsorHover.forEach((hvr) => hvr.classList.remove("opacity-40"));
+        });
+
+        hover.addEventListener("click", () => {
+            sponsorHover.forEach((hvr) => hvr.classList.remove("opacity-40"));
+        });
     });
-    });
+});
 </script>
 
 <?php get_footer() ?>

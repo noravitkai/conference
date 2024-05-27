@@ -25,12 +25,12 @@ while (have_posts()) : the_post();
                 </div>
                 <div class="col-end-1 lg:row-span-4">
                     <?php $speaker_img = get_field('speaker_img'); if ($speaker_img) : ?>
-                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="rounded-full object-cover aspect-square w-32 h-32 lg:w-72 lg:h-72 shadow-sm">
+                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="rounded-full object-cover aspect-square w-24 h-24 lg:w-60 lg:h-60 shadow-sm">
                     <?php endif; ?>
                 </div>
-                <figcaption class="lg:col-start-1 lg:row-start-3 font-medium leading-relaxed text-darkgreen flex flex-col gap-4">
-                    <h1 class="text-lg sm:text-xl font-primary"><?php echo esc_html(get_field('speaker_name')); ?></h1>
-                    <date class="text-base sm:text-lg font-secondary"><?php echo esc_html(get_field('presentation_year')); ?></date>
+                <figcaption class="lg:col-start-1 lg:row-start-3 font-medium leading-relaxed text-darkgreen flex flex-col gap-1 sm:gap-4">
+                    <h1 class="text-sm sm:text-base font-primary"><?php echo esc_html(get_field('speaker_name')); ?></h1>
+                    <date class="text-sm sm:text-base font-secondary"><?php echo esc_html(get_field('presentation_year')); ?></date>
                 </figcaption>
             </figure>
         </div>
@@ -54,8 +54,8 @@ while (have_posts()) : the_post();
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
             </span>
-            <span class="absolute flex items-center justify-center w-full h-full text-darkgreen transition-all duration-300 transform group-hover:translate-x-full ease">Program megtekintése</span>
-            <span class="relative invisible">Program megtekintése</span>
+            <span class="absolute flex items-center justify-center w-full h-full text-darkgreen transition-all duration-300 transform group-hover:translate-x-full ease">Program</span>
+            <span class="relative invisible">Program</span>
         </a>
         <?php $gallery_page_url = get_permalink(get_page_by_title('Galéria')); ?>
         <a href="<?php echo esc_url($gallery_page_url); ?>" target="_blank" class="mt-8 relative inline-flex items-center justify-center px-5 py-2 overflow-hidden text-sm sm:text-base font-secondary font-medium text-darkgreen border-2 border-darkgreen rounded-full shadow-sm group transition duration-300 ease-out hover:shadow-md">
@@ -64,8 +64,8 @@ while (have_posts()) : the_post();
                     <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                 </svg>
             </span>
-            <span class="absolute flex items-center justify-center w-full h-full text-darkgreen transition-all duration-300 transform group-hover:translate-x-full ease">Galéria megtekintése</span>
-            <span class="relative invisible">Galéria megtekintése</span>
+            <span class="absolute flex items-center justify-center w-full h-full text-darkgreen transition-all duration-300 transform group-hover:translate-x-full ease">Galéria</span>
+            <span class="relative invisible">Galéria</span>
         </a>
     </div>
 </section>
@@ -104,22 +104,22 @@ while (have_posts()) : the_post();
         ?>
 
         <div class="relative col-span-1 bg-white shadow-md ring-1 ring-neutral-900/5 p-4 rounded-2xl hover:shadow-xl group cursor-pointer overflow-hidden transition-all duration-300">
-            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 group-hover:scale-[20]"></span>
+            <span class="absolute top-4 z-0 h-16 sm:h-20 w-16 sm:w-20 rounded-full bg-darkgreen transition-all duration-300 lg:group-hover:scale-[20]"></span>
             <div class="relative z-5">
                 <span>
                     <?php $speaker_img = get_field('speaker_img'); ?>
                     <?php if ($speaker_img) : ?>
-                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full object-cover bg-darkgreen transition-all duration-300 group-hover:bg-lightgreen">
+                        <img src="<?php echo esc_url($speaker_img['url']); ?>" alt="<?php echo esc_attr($speaker_img['alt']); ?>" class="grid h-16 sm:h-20 w-16 sm:w-20 place-items-center rounded-full object-cover bg-darkgreen transition-all duration-300 lg:group-hover:bg-lightgreen">
                     <?php endif; ?> 
                 </span>
-                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 group-hover:text-white">
+                <div class="pt-3 sm:pt-5 text-lg sm:text-xl font-primary font-medium text-darkgreen transition-all duration-300 lg:group-hover:text-white">
                     <h3><?php the_field('speaker_name') ?></h3>
                 </div>
-                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed transition-all duration-300 group-hover:text-white line-clamp-1">
+                <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-semibold text-zinc-900 leading-relaxed transition-all duration-300 lg:group-hover:text-white line-clamp-1">
                     <p><?php the_field('presentation_title') ?></p>
                 </div>
                 <div class="pt-3 sm:pt-5 text-sm sm:text-base font-secondary font-medium text-darkgreen">
-                    <a href="<?php the_permalink() ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 group-hover:text-white">
+                    <a href="<?php the_permalink() ?>" class="clickable-parent flex flex-row items-center transition-all duration-300 lg:group-hover:text-white">
                     <p class="pr-1">Tovább</p>
                         <svg class="h-4 sm:h-6 w-4 sm:w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>

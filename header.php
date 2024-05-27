@@ -22,17 +22,17 @@
     if ($headerfooter_query->have_posts()) :
         while ($headerfooter_query->have_posts()) : $headerfooter_query->the_post();
     ?>
-    <nav class="flex">
-        <div class="flex flex-0.5 sm:flex-1 items-center justify-start">
+    <nav class="flex justify-between items-center">
+        <div class="flex flex-1 items-center justify-start">
             <?php $logo = get_field('logo'); ?>
             <?php if ($logo) : ?>
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="h-6 sm:h-8 w-auto">
                 </a>
             <?php endif; ?>
+            <p class="hidden md:flex flex-1 items-center justify-center font-primary font-medium text-sm sm:text-base text-center text-zinc-900"><?php the_field('conf-info-banner') ?></p>
         </div>
-        <p class="flex flex-1 items-center justify-center font-primary font-medium text-sm sm:text-base text-center text-zinc-900"><?php the_field('conf-info-banner') ?></p>
-        <div class="flex flex-0.5 sm:flex-1 items-center justify-end">
+        <div class="flex items-center justify-end">
             <button id="menuToggleLarge" class="lg:flex hidden justify-center">
                 <div class="space-y-2">
                     <span class="block h-1 w-10 origin-center bg-zinc-900 transition-transform ease-in-out"></span>

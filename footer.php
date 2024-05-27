@@ -1,6 +1,6 @@
 <!-- Scroll To Top Button -->
 <button id="scroll-to-top-btn" class="fixed bottom-4 right-2.5 sm:bottom-6 sm:right-8 bg-darkgreen text-white hover:scale-110 hover:bg-zinc-900 transition duration-300 ease-in-out rounded-full shadow-md p-1 sm:p-2 hidden">
-    <svg class="h-3 w-3 sm:w-4 sm:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+    <svg class="h-3.5 w-3.5 sm:w-4 sm:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
     </svg>
 </button>
@@ -31,7 +31,7 @@
             <a href="<?php echo esc_url(get_permalink(get_page_by_title('Galéria'))); ?>" class="pl-3 sm:pl-8 hover:opacity-100 transition-opacity duration-300">Galéria</a>
 
             <?php if ($privacy_policy) : ?>
-                <a href="<?php echo esc_url($privacy_policy['url']); ?>" class="pl-3 sm:pl-8" target="_blank">Adatkezelési tájékoztató</a>
+                <a href="<?php echo esc_url($privacy_policy['url']); ?>" class="pl-3 sm:pl-8" target="_blank">Adatkezelési irányelvek</a>
             <?php endif; ?>
 
             <?php if ($facebook_link) : ?>
@@ -51,36 +51,40 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    var scrollToTopButton = document.getElementById("scroll-to-top-btn");
+        var scrollToTopButton = document.getElementById("scroll-to-top-btn");
 
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 200) {
-        scrollToTopButton.classList.remove("hidden");
-        } else {
-        scrollToTopButton.classList.add("hidden");
-        }
-    });
-
-    scrollToTopButton.addEventListener("click", function () {
-        window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 200) {
+                scrollToTopButton.classList.remove("hidden");
+            } else {
+                scrollToTopButton.classList.add("hidden");
+            }
         });
-    });
-    });
 
-    const footerLinks = document.querySelectorAll("#footerLinks a");
+        scrollToTopButton.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
 
-    footerLinks.forEach((link) => {
-    link.addEventListener("mouseenter", () => {
-        footerLinks.forEach(
-        (lnk) => lnk !== link && lnk.classList.add("opacity-40")
-        );
-    });
+        const footerLinks = document.querySelectorAll("#footerLinks a");
 
-    link.addEventListener("mouseleave", () => {
-        footerLinks.forEach((lnk) => lnk.classList.remove("opacity-40"));
-    });
+        footerLinks.forEach((link) => {
+            link.addEventListener("mouseenter", () => {
+                footerLinks.forEach(
+                    (lnk) => lnk !== link && lnk.classList.add("opacity-40")
+                );
+            });
+
+            link.addEventListener("mouseleave", () => {
+                footerLinks.forEach((lnk) => lnk.classList.remove("opacity-40"));
+            });
+
+            link.addEventListener("click", () => {
+                footerLinks.forEach((lnk) => lnk.classList.remove("opacity-40"));
+            });
+        });
     });
 </script>
 

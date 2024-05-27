@@ -37,9 +37,9 @@ Template Name: Volumes Page
             <?php if ($volume_img) : ?>
                 <img src="<?php echo esc_url($volume_img['url']); ?>" alt="<?php echo esc_attr($volume_img['alt']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                 <div class="absolute inset-0 bg-zinc-900/60 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div class="p-4 flex flex-col gap-1 text-white leading-relaxed">
-                        <h3 class="text-lg sm:text-xl font-primary font-semibold"><?php the_field('volume_title'); ?></h3>
-                        <date class="text-sm sm:text-base font-secondary font-medium opacity-70">
+                    <div class="p-4 flex flex-col gap-1 text-white leading-tight sm:leading-relaxed">
+                        <h3 class="text-sm sm:text-xl font-primary font-semibold line-clamp-3 sm:line-clamp-none"><?php the_field('volume_title'); ?></h3>
+                        <date class="text-xs sm:text-base font-secondary font-medium opacity-70">
                             <?php the_field('volume_date'); ?>
                         </date>
                     </div>
